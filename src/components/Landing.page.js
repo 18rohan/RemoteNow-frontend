@@ -52,7 +52,7 @@ const Landing = () => {
         <div className="w-1/2 mt-6">
           <h1 className="text-2xl font-light">
             Experience the startup ecosystem — invest in startups, research the
-            fastest-growing companies, and find a job you love.
+            fastest-growing companies, and find a job you love!
           </h1>
         </div>
       </div>
