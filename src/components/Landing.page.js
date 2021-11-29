@@ -85,7 +85,7 @@ const Landing = () => {
                 Over $1 billion deployed alongside leading venture fund managers
                 with 36% of all top-tier U.S. VC deals funded on AngelList.
               </h1>
-              <Link to="/signup">
+              <Link to="/login">
                 <div className="text-white my-6 py-4 bg-blue-700 border-2 border-blue-700 hover:border-blue-500  hover:bg-blue-500 hover:text-white font-bold mx-5 px-7 min-w-md py-2 text-sm rounded-sm">
                   Hire New Talents
                 </div>

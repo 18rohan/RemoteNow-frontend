@@ -33,55 +33,6 @@ const Login = ({ authorized }) => {
     formIsValid = formIsValid && error.email_id && error.password;
     setIsFormValid(formIsValid);
   };
-
-  // const refresh = async (refresh_token) => {
-  //   console.log("Refreshing token...");
-  //   try {
-  //     const response = axios.post(
-  //       "http://localhost:4000/recruiter/auth/refresh",
-  //       {
-  //         token: refresh_token,
-  //       }
-  //     );
-  //     const resultData = await response.json();
-  //     const access_token = resultData.token;
-  //     localStorage.setItem({ access_token: access_token });
-  //     return access_token;
-  //   } catch (err) {
-  //     console.log(err.response.data);
-  //   }
-  // };
-
-  // const hasAccess = async (access_token, refresh_token) => {
-  //   if (!refresh_token) {
-  //     return null;
-  //   } else if (access_token === undefined) {
-  //     access_token = await refresh(refresh_token);
-  //     return access_token;
-  //   }
-  //   return access_token;
-  // };
-  // const requestLogin = async (access_token, refresh_token) => {
-  //   const response = await axios.get(
-  //     "http://localhost:4000/recruiter/protected/profile",
-  //     {},
-  //     { headers: { auth_token: access_token } }
-  //   );
-  //   const resData = await response.json();
-  //   console.log(resData);
-  // };
-
-  // const protectedRoute = async () => {
-  //   let access_token = localStorage.getItem("access_token");
-  //   let refresh_token = localStorage.getItem("refresh_token");
-  //
-  //   access_token = await hasAccess(access_token, refresh_token);
-  //   if (!access_token) {
-  //     // set message - login Again
-  //   } else {
-  //     await requestLogin(access_token, refresh_token);
-  //   }
-  // };
   const handleloginSubmit = () => {
     if (!isFormValid) {
       return;
@@ -97,7 +48,7 @@ const Login = ({ authorized }) => {
     <div className="grid grid-cols-1  ">
       <div className="w-full bg-white    md:w-full h-screen  cols-span-1 flex flex-col ">
         <Link to="/">
-          <div class="w-full  flex md:w-full justify-start items-start px-2 ">
+          <div class="w-full  flex md:w-full justify-start items-start px-2 my-3 ">
             <p className="text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
               remote-now
             </p>
@@ -129,9 +80,17 @@ const Login = ({ authorized }) => {
         <div className="w-full flex flex-col md:w-full h-full justify-center items-center">
           <div className="md:w-1/2 flex flex-col justify-center items-center ">
             <div className="w-full mb-5 md:w-full flex justify-start mb-2">
-              <p className="text-gray-800 font-bold text-2xl">
+              <div className=" w-full md:w-full  flex flex-col justify-center items-center mb-4">
+                <p className="text-3xl text-gray-800 ">
+                  Lets log you in help you find the{" "}
+                  <p className="text-4xl text-blue-700 font-bold">
+                    Right Talents!
+                  </p>
+                </p>
+              </div>
+              {/* <p className="text-gray-800 font-bold text-2xl">
                 Login with your email id!
-              </p>
+              </p> */}
             </div>
 
             <InputComponent
@@ -153,25 +112,22 @@ const Login = ({ authorized }) => {
               onChange={handleChange}
             />
           </div>
-          <div class="md:flex md:items-center w-1/2 flex-col justify-center mt-4">
+          <div class="md:flex md:items-end w-1/2 flex-col justify-center mt-4">
             <button
-              class="shadow text-white bg-red-500 w-full hover:bg-white hover:border hover:border-gray-500 hover:text-gray-800 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
+              class="shadow text-white bg-blue-500 w-full hover:bg-white hover:border hover:border-gray-500 hover:text-gray-800 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
               type="button"
               onClick={handleloginSubmit}
             >
               Sign In
             </button>
 
-            <p className="text-md text-gray-800">
-              Do not have an account? <Link to="/signup">Sign up here</Link>
+            <p className="text-md font-light text-blue-800 ">
+              Do not have an account?{" "}
+              <Link to="/signup">
+                <span className="font-bold">Sign up here</span>
+              </Link>
             </p>
           </div>
-        </div>
-        <div className=" w-full md:w-full  flex flex-col justify-center items-center my-12">
-          <p className="text-4xl text-gray-800 ">
-            Lets connect you with the{" "}
-            <p className="text-4xl text-blue-700 font-bold">Right Talents!</p>
-          </p>
         </div>
       </div>
     </div>
