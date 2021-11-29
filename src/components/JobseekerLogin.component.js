@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-import { useFormik, Formik, form } from "formik";
-import { SignupContext } from "./SignupContext.js";
+import { useFormik, form } from "formik";
+
 import InputComponent from "../components/inputComponent";
 import * as AuthActions from "../redux/actions/jobseeker.actions.js";
 

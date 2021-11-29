@@ -1,5 +1,5 @@
 import "../assets/tailwind.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Searchbar = () => {
   return (
     <div className="w-1/2 h-full md:w-full mt-7 py-24 px-20 flex flex-col justify-center my-8 items-start bg-gradient-to-r from-blue-200">

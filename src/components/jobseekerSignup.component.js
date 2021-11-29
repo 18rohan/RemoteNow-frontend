@@ -1,17 +1,8 @@
-import React, { useContext } from "react";
-import { useFormik, Formik, form } from "formik";
-import InputComponent from "../components/inputComponent";
+import React from "react";
+import { useFormik, form } from "formik";
+
 import { useDispatch } from "react-redux";
 import * as AuthActions from "../redux/actions/jobseeker.actions";
-import { SignupContext } from "./SignupContext.js";
-
-const ErrorWarning = (formik, errorValue) => {
-  return (
-    <div className="flex justify-start items-start -mt-3">
-      <p className="text-red-500 font-medium ">{formik.errors.errorValue}</p>
-    </div>
-  );
-};
 
 const validate = (values) => {
   const errors = {};

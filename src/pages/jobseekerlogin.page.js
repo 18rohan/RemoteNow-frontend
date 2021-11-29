@@ -2,19 +2,12 @@ import "../assets/tailwind.css";
 import { Link } from "react-router-dom";
 
 import React, { useState } from "react";
-import { useFormik, Formik, form } from "formik";
-import { useDispatch } from "react-redux";
 
-import * as AuthActions from "../redux/actions/jobseeker.actions";
 import JobseekerSignup from "../components/jobseekerSignup.component.js";
 import JobseekerLoginComponent from "../components/JobseekerLogin.component.js";
-import InputComponent from "../components/inputComponent";
-import { SignupContext } from "../components/SignupContext.js";
 
 const JobseekerLogin = ({ authorized }) => {
-  const dispatch = useDispatch();
   const [signin, setSignIn] = useState("signin");
-  const [user, setUser] = useState({});
 
   // Toggle Signup and Signin Form
   const ToggleSignin = (event) => {
@@ -108,6 +101,3 @@ const JobseekerLogin = ({ authorized }) => {
 };
 
 export default JobseekerLogin;
-
-{
-}

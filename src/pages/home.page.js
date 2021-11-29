@@ -4,11 +4,10 @@ import "../assets/tailwind.css";
 import axios from "axios";
 
 import Searchbar from "../components/searchbar.component";
-import Sidebar from "../components/sidebar.component";
 
 // import LongCard from "../components/longJobData.component";
 import NewLongCard from "../components/newLongJobDataCard.component";
-import ImageCard from "../components/imageLabelCard.component.js";
+
 import NewCard from "../components/newCard.component";
 import NewNav from "../components/newnavbar.component";
 import SidebarNew from "../components/SidebarNew.component";

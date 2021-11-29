@@ -1,8 +1,5 @@
 import "../assets/tailwind.css";
 
-// Icons
-import { FaUserTie, FaBriefcase, FaFolderOpen } from "react-icons/fa";
-import { BiMessageRoundedDetail } from "react-icons/bi";
 const SidebarNew = () => {
   return (
     <div className="w-20 h-full bg-grey-100  shadow-sm fixed  ">
