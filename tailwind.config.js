@@ -9,13 +9,6 @@ module.exports = {
 
     extend: {},
   },
-  variants: {
-    animation: ["responsive", "motion-safe", "motion-reduce"],
-    extend: {
-      animation: {
-        wiggle: "wiggle 1s ease-in-out infinite",
-      },
-    },
-  },
+  variants: {},
   plugins: [],
 };

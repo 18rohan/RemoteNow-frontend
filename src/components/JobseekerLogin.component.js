@@ -38,11 +38,11 @@ const JobseekerLoginComponent = () => {
   const handleLoginSubmit = (event) => {
     dispatch(AuthActions.login(formik.values.email_id, formik.values.password));
   };
-  console.log("formik: ", formik);
+
   return (
     <div className="w-full flex flex-col md:w-full  h-full justify-start items-center mt-2">
       <form
-        class="w-full max-w-lg  rounded-lg p-5"
+        className="w-full max-w-lg  rounded-lg p-5"
         onSubmit={formik.handleSubmit}
       >
         <div className="flex flex-row justify-right ">
@@ -51,8 +51,8 @@ const JobseekerLoginComponent = () => {
           </p>
         </div>
 
-        <div class="md:flex md:items-center w-full mb-2 overflow-scroll">
-          <div class="md:w-full">
+        <div className="md:flex md:items-center w-full mb-2 overflow-scroll">
+          <div className="md:w-full">
             <InputComponent
               name="email_id"
               id="email_id"
@@ -74,8 +74,8 @@ const JobseekerLoginComponent = () => {
             </p>
           </div>
         ) : null}
-        <div class="flex flex-col md: w-full mb-2">
-          <div class="md:w-full">
+        <div className="flex flex-col md: w-full mb-2">
+          <div className="md:w-full">
             <InputComponent
               name="password"
               type="password"
@@ -97,16 +97,18 @@ const JobseekerLoginComponent = () => {
             </div>
           ) : null}
         </div>
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/2"></div>
-          <label class="md:w-full flex justify-end text-gray-500 font-bold">
-            <input class="mr-2 leading-tight" type="checkbox" />
-            <span class="text-sm text-gray-800">Send me your newsletter!</span>
+        <div className="md:flex md:items-center mb-6">
+          <div className="md:w-1/2"></div>
+          <label className="md:w-full flex justify-end text-gray-500 font-bold">
+            <input className="mr-2 leading-tight" type="checkbox" />
+            <span className="text-sm text-gray-800">
+              Send me your newsletter!
+            </span>
           </label>
         </div>
-        <div class="md:flex md:items-center flex-col justify-center">
+        <div className="md:flex md:items-center flex-col justify-center">
           <button
-            class="text-white bg-blue-600 w-full border border-blue-600 hover:bg-blue-500 border border-blue-500 hover:text-white focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
+            className="text-white bg-blue-600 w-full border border-blue-600 hover:bg-blue-500 border border-blue-500 hover:text-white focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
             type="button"
             onClick={handleLoginSubmit}
           >

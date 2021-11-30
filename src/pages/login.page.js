@@ -1,48 +1,64 @@
 import "../assets/tailwind.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useFormik, form } from "formik";
+import { useHistory, Redirect } from "react-router-dom";
 import * as AuthActions from "../redux/actions/recruiter.action";
 // import axios from "axios";
 import Cookie from "js-cookie";
 import InputComponent from "../components/inputComponent";
 
-const Login = ({ authorized }) => {
-  const [user, setUser] = useState({});
-  const [error, setError] = useState({});
-  const [isFormValid, setIsFormValid] = useState(true);
-  const dispatch = useDispatch();
-  const history = useHistory();
-  if (!authorized) {
-    return <Redirect to="/post-job" />;
+const validate = (values) => {
+  const errors = {};
+
+  if (!values.email_id) {
+    errors.email_id = "*Required";
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email_id)
+  ) {
+    errors.email_id = "Invalid Email address";
   }
 
-  // Handle Input Change
-  const handleChange = (event) => {
-    setUser({ ...user, [event.target.name]: event.target.value });
-    let currentError = false;
-    if (!event.target.value.length > 0) {
-      setError({ ...error, [event.target.name]: currentError });
-    } else {
-      setError({ ...error, [event.target.name]: !currentError });
-    }
-    let formIsValid = true;
-    formIsValid = formIsValid && error.email_id && error.password;
-    setIsFormValid(formIsValid);
+  if (!values.password) {
+    errors.password = "*Required";
+  }
+  return errors;
+};
+
+const Login = ({ authorized }) => {
+  const [user, setUser] = useState({});
+  const [access_token, setAccessToken] = useState(null);
+  const userData = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const formik = useFormik({
+    initialValues: {
+      email_id: "",
+      password: "",
+    },
+    validate,
+    onSubmit: async (values) => {
+      dispatch(
+        AuthActions.login(formik.values.email_id, formik.values.password)
+      );
+    },
+  });
+  const history = useHistory();
+
+  const handleLoginSubmit = (event) => {
+    dispatch(
+      AuthActions.login(formik.values.email_id, formik.values.password)
+    ).then(() => {
+      if (userData) {
+        history.push("/post-job");
+      }
+    });
   };
-  const handleloginSubmit = () => {
-    if (!isFormValid) {
-      return;
-    } else if (isFormValid) {
-      dispatch(AuthActions.login(user.email_id, user.password));
-    }
-    if (Cookie.get("access_token")) {
-      history.push("/profile");
-    }
-  };
+  if (userData.is_authenticated) {
+    history.push("/post-job");
+  }
 
   return (
     <div className="grid grid-cols-1  ">
@@ -77,58 +93,76 @@ const Login = ({ authorized }) => {
           </div>
         </Link>
 
-        <div className="w-full flex flex-col md:w-full h-full justify-center items-center">
-          <div className="md:w-1/2 flex flex-col justify-center items-center ">
-            <div className="w-full mb-5 md:w-full flex justify-start mb-2">
-              <div className=" w-full md:w-full  flex flex-col justify-center items-center mb-4">
-                <p className="text-3xl text-gray-800 ">
-                  Lets log you in help you find the{" "}
-                  <p className="text-4xl text-blue-700 font-bold">
-                    Right Talents!
+        <form>
+          <div className="w-full flex flex-col md:w-full h-full justify-center items-center">
+            <div className="md:w-1/2 flex flex-col justify-center items-center ">
+              <div className="w-full mb-5 md:w-full flex justify-start mb-2">
+                <div className=" w-full md:w-full  flex flex-col justify-center items-center mb-4">
+                  <p className="text-3xl text-gray-800 ">
+                    Lets log you in help you find the{" "}
+                    <p className="text-4xl text-blue-700 font-bold">
+                      Right Talents!
+                    </p>
                   </p>
-                </p>
-              </div>
-              {/* <p className="text-gray-800 font-bold text-2xl">
+                </div>
+                {/* <p className="text-gray-800 font-bold text-2xl">
                 Login with your email id!
               </p> */}
+              </div>
+
+              <InputComponent
+                name="email_id"
+                id="email_id"
+                type="text"
+                placeholder="john@doe.com"
+                Label="Email Id"
+                label_color="black"
+                size="half"
+                onChange={formik.handleChange}
+              />
+              {!formik.touched.email_id && formik.errors.email_id ? (
+                <div className="flex w-full justify-start items-start -mt-1">
+                  <p className="text-red-500 font-medium ">
+                    {formik.errors.email_id}
+                  </p>
+                </div>
+              ) : null}
+              <InputComponent
+                name="password"
+                id="password"
+                type="password"
+                placeholder="Enter password"
+                Label="Password"
+                label_color="black"
+                size="half"
+                onChange={formik.handleChange}
+              />
+              {!formik.touched.password && formik.errors.password ? (
+                <div className="flex justify-start items-start  w-full -mt-1">
+                  <p className="text-red-500 font-medium text-left ">
+                    {formik.errors.password}
+                  </p>
+                </div>
+              ) : null}
             </div>
+            <div class="md:flex md:items-end w-1/2 flex-col justify-center mt-4">
+              <button
+                class="shadow text-white bg-blue-500 w-full hover:bg-white hover:border hover:border-gray-500 hover:text-gray-800 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
+                type="button"
+                onClick={handleLoginSubmit}
+              >
+                Sign In
+              </button>
 
-            <InputComponent
-              name="email_id"
-              type="text"
-              placeholder="john@doe.com"
-              Label="Email Id"
-              label_color="black"
-              size="half"
-              onChange={handleChange}
-            />
-            <InputComponent
-              name="password"
-              type="password"
-              placeholder="Enter password"
-              Label="Password"
-              label_color="black"
-              size="half"
-              onChange={handleChange}
-            />
+              <p className="text-md font-light text-blue-800 ">
+                Do not have an account?{" "}
+                <Link to="/signup">
+                  <span className="font-bold">Sign up here</span>
+                </Link>
+              </p>
+            </div>
           </div>
-          <div class="md:flex md:items-end w-1/2 flex-col justify-center mt-4">
-            <button
-              class="shadow text-white bg-blue-500 w-full hover:bg-white hover:border hover:border-gray-500 hover:text-gray-800 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
-              type="button"
-              onClick={handleloginSubmit}
-            >
-              Sign In
-            </button>
-
-            <p className="text-md font-light text-blue-800 ">
-              Do not have an account?{" "}
-              <Link to="/signup">
-                <span className="font-bold">Sign up here</span>
-              </Link>
-            </p>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   );

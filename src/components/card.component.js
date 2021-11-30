@@ -15,12 +15,12 @@ const Card = (jobs) => {
             />
           </div>
           <div className="px-4 py-1 flex flex-col justify-start items-start">
-            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
               {jobs.jobs.position_title}
             </div>
 
-            <p class="mt-2 text-gray-500 text-sm">{jobs.jobs.timezone}</p>
-            <p class="mt-2 text-gray-500 text-sm">
+            <p className="mt-2 text-gray-500 text-sm">{jobs.jobs.timezone}</p>
+            <p className="mt-2 text-gray-500 text-sm">
               Vacancies: {jobs.jobs.total_vacancy}
             </p>
             <div className="flex flex-row ">

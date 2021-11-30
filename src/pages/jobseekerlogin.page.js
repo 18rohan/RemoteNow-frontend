@@ -22,7 +22,7 @@ const JobseekerLogin = ({ authorized }) => {
   return (
     <div className="grid grid-cols-1 md: grid-cols-1   ">
       <Link to="/">
-        <div class="flex-shrink-0 flex  px-2  py-2 fixed">
+        <div className="flex-shrink-0 flex  px-2  py-2 fixed">
           <p className="text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
             remote-now
           </p>

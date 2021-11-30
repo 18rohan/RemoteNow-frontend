@@ -2,30 +2,30 @@ import "../assets/tailwind.css";
 
 import { Redirect } from "react-router-dom";
 
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { useDispatch } from "react-redux";
 import "../App.css";
 
 // Importing ACTIONS
 import * as RecruiterActions from "../redux/actions/recruiter.action";
 
 // Importing  Components
-import Navbar from "../components/navbar.component";
+
+import NewNav from "../components/newnavbar.component";
 import InputComponent from "../components/inputComponent";
 // import Sidebar from '../components/Sidebar.js';
 import Sidebar from "../components/adminSidebar.component";
+import Cookie from "js-cookie";
 
 const PostJob = ({ authorized }) => {
   const dispatch = useDispatch();
   const [form, setForm] = useState({});
+  const userData = useSelector((state) => state.user);
+
   const [error, setError] = useState({});
-  // const [isFormValid, setIsFormValid] = useState(true);
-  // check if user is authorized to access this component/page
-  if (!authorized) {
-    return <Redirect to="/login" />;
-  }
-  // Declaring states
+  console.log("POST JOB::: IS_AUTHENTICATED: ", userData.is_authenticated);
+  // console.log("POST JOB PAGE AUTHORIZED: ", authorized);
 
   // Input Change Handler
   const handleChange = (event) => {
@@ -36,9 +36,7 @@ const PostJob = ({ authorized }) => {
     } else {
       setError({ ...error, [event.target.name]: !currentError });
     }
-    // let formIsValid = true;
-    // formIsValid = formIsValid && error.email_id && error.password;
-    // setIsFormValid(formIsValid)
+
     console.log("FORM: ", form);
   };
 
@@ -65,10 +63,11 @@ const PostJob = ({ authorized }) => {
       )
     );
   };
+
   return (
     <div>
       <div className="fixed w-full">
-        <Navbar />
+        <NewNav recruiter_name={userData.user_data.recruiter_name} />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-6">
         <div className=" invisible md:visible cols-span-1 mt-20  ">
@@ -215,7 +214,7 @@ const PostJob = ({ authorized }) => {
 
           <button
             className="shadow text-white bg-red-500  mx-3 w-11/12 md:w-1/4 hover:bg-white mt-8 hover:shadow-lg hover:text-gray-800 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
-            type="button"
+            type="submit"
             onClick={formSubmitHandler}
           >
             Submit

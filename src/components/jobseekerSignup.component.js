@@ -84,22 +84,22 @@ const JobseekerSignup = () => {
 
   return (
     <div className="w-full flex flex-col md:w-full h-full justify-start items-center overflow-scroll">
-      <form class="w-full max-w-lg mx-10">
+      <form className="w-full max-w-lg mx-10">
         <p className="text-3xl mb-2 font-extralight text-left text-gray-800 my-8 mb-4 ">
           Register yourself.
         </p>
-        <div class="flex flex-wrap -mx-3 mb-6">
+        <div className="flex flex-wrap -mx-3 mb-6">
           {/* Name */}
-          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
-              class="uppercase tracking-wide text-gray-700 text-sm md:flex w-full justify-start font-bold mb-2"
+              className="uppercase tracking-wide text-gray-700 text-sm md:flex w-full justify-start font-bold mb-2"
               htmlFor="grid-first-name"
             >
               Name
             </label>
 
             <input
-              class="appearance-none block w-full bg-white text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+              className="appearance-none block w-full bg-white text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
               type="text"
               id="signup_name"
               name="signup_name"
@@ -118,15 +118,15 @@ const JobseekerSignup = () => {
           </div>
 
           {/* Email */}
-          <div class="w-full md:w-1/2 px-3">
+          <div className="w-full md:w-1/2 px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
+              className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
               htmlFor="grid-last-name"
             >
               Email
             </label>
             <input
-              class="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 focus:border-blue-500"
+              className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 focus:border-blue-500"
               onChange={formik.handleChange}
               value={formik.values.signup_email}
               id="signup_email"
@@ -146,14 +146,14 @@ const JobseekerSignup = () => {
         </div>
 
         {/* Password */}
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
+            <label className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
               Password
             </label>
 
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="password"
               name="signup_password"
               id="signup_password"
@@ -173,13 +173,13 @@ const JobseekerSignup = () => {
         </div>
 
         {/* Confirm Password */}
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
+            <label className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
               Confirm Password
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="password"
               name="confirmPassword"
               id="confirmPassword"
@@ -199,17 +199,17 @@ const JobseekerSignup = () => {
         </div>
 
         {/* CITY  */}
-        <div class="flex flex-wrap -mx-3 mb-2">
-          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <div className="flex flex-wrap -mx-3 mb-2">
+          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
-              class="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
+              className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
               htmlFor="grid-city"
             >
               City
             </label>
 
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
               name="city"
               id="city"
@@ -228,16 +228,16 @@ const JobseekerSignup = () => {
           </div>
 
           {/* State */}
-          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
-              class="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
+              className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
               htmlFor="grid-state"
             >
               State
             </label>
-            <div class="relative">
+            <div className="relative">
               <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 name="state"
                 type="text"
                 onBlur={formik.handleBlur}
@@ -257,16 +257,16 @@ const JobseekerSignup = () => {
           </div>
 
           {/* ZIP Code */}
-          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
-              class="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
+              className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
               htmlFor="grid-zip"
             >
               Zip
             </label>
 
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
               name="zip_code"
               id="zip_code"
@@ -286,9 +286,9 @@ const JobseekerSignup = () => {
         </div>
 
         {/* Submit Button */}
-        <div class="md:flex md:items-center flex-col justify-center">
+        <div className="md:flex md:items-center flex-col justify-center">
           <button
-            class="shadow text-white bg-blue-600 w-full hover:bg-blue-500 hover:border mt-8   focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
+            className="shadow text-white bg-blue-600 w-full hover:bg-blue-500 hover:border mt-8   focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
             type="button"
             onClick={handleSignupSubmit}
           >

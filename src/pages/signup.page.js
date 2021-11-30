@@ -1,15 +1,11 @@
 import "../assets/tailwind.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import React, { useState } from "react";
 import { useFormik, form } from "formik";
 
 import { useDispatch } from "react-redux";
 
-import Cookie from "js-cookie";
-
 // importing component
-import InputComponent from "../components/inputComponent";
 
 // Importing ACTIONS
 import * as AuthActions from "../redux/actions/recruiter.action";

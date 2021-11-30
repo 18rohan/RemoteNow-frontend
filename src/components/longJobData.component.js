@@ -29,11 +29,7 @@ const LongCard = (jobs) => {
           <div className="tracking-wide text-md text-gray-700 font-semibold">
             {/*{jobs.locations_allowed[0]}*/}
           </div>
-          {/* <div className="flex flex-row my-1">
-    <div class="tracking-wide text-lg text-gray-400 mx-2 font-semibold">Product Design |</div>
-    <div class="tracking-wide text-lg text-gray-400 font-semibold">2 years experience | </div>
-    <div class="tracking-wide text-lg text-gray-400 font-semibold"> California</div>
-    </div> */}
+
           <div className="flex flex-row w-full md:flex flex-row mb-1 mt-2">
             <div className=" bg-gray-900  rounded-lg text-white font-bold text-xs  mx-1 py-1  w-full md:w-20">
               {jobs.jobs.timezone}

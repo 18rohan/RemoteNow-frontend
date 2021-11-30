@@ -11,7 +11,7 @@ import "../App.css";
 
 // Importing  Components
 import Navbar from "../components/navbar.component";
-
+import NewNav from "../components/newnavbar.component";
 import AdminJobCard from "../components/adminJobCard.component";
 // import Sidebar from '../components/Sidebar.js';
 import Sidebar from "../components/adminSidebar.component";
@@ -22,12 +22,9 @@ class JobReponses extends React.Component {
     this.state = {
       jobs: [],
     };
-    if (!props.authorized) {
-      return <Redirect to="/login" />;
-    }
   }
   componentDidMount() {
-    fetch("http://localhost:4000/jobs/fetch/jobs", {
+    fetch("https://remotenow.herokuapp.com/jobs/fetch/jobs", {
       headers: { auth_token: Cookie.get("access_token") },
     })
       .then((res) => res.json())
@@ -40,7 +37,7 @@ class JobReponses extends React.Component {
     return (
       <div>
         <div className="fixed w-full">
-          <Navbar />
+          <NewNav />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-6">

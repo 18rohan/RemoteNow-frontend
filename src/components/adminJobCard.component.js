@@ -10,7 +10,7 @@ const AdminJobCard = (props) => {
 
   return (
     <div>
-      <div className="md:grid grid-cols-4 mt-12 pt-3 shadow-lg bg-indigo-50">
+      <div className="md:grid grid-cols-4 mt-12 pt-3 shadow-lg bg-gray-50">
         <div className="md:col-span-1">
           <img
             className=" w-full md:w-full h-full  object-contain  "

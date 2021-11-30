@@ -9,7 +9,7 @@ const Landing = () => {
       {/* Logo */}
       <div className="flex flex-col w-full justify-center items-center">
         <Link to="/">
-          <div class="w-full  flex md:w-full justify-start items-start px-2 ">
+          <div className="w-full  flex md:w-full justify-start items-start px-2 ">
             <p className="text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
               remote-now
             </p>

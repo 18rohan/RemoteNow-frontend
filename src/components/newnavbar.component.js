@@ -5,18 +5,21 @@ import { useSelector } from "react-redux";
 
 import Cookie from "js-cookie";
 
-function Nav() {
+const Nav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const userData = useSelector((state) => state.user);
   const history = useHistory();
+  // console.log("USER DATA:::: ", userData.recruiter_name);
 
   const onLogout = () => {
     Cookie.remove("access_token");
-    if (!Cookie.get("access_token")) {
-      history.push("/login");
-    }
+    localStorage.clear();
+    window.location.reload(false);
   };
+  if (!Cookie.get("access_token")) {
+    history.push("/login");
+  }
   return (
     <div>
       <nav className="bg-white ">
@@ -24,36 +27,69 @@ function Nav() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <Link to="/">
-                  <div class="flex-shrink-0 flex  px-2 ">
-                    <p className="text-gray-800 font-bold font-sans text-2xl leading-10">
-                      remote-now
-                    </p>
-                    <div className="text-gray-800 ">
-                      <svg
-                        id="logo-35"
-                        width="50"
-                        height="39"
-                        viewBox="0 0 50 39"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        {" "}
-                        <path
-                          d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
-                          class="ccompli1"
-                          fill="#007AFF"
-                        ></path>{" "}
-                        <path
-                          d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
-                          class="ccustom"
-                          fill="#312ECB"
-                        ></path>{" "}
-                      </svg>
-                      {/* <img src="/logo.svg" alt="jobs" className="w-6" /> */}
+                {Cookie.get("access_token") ? (
+                  <Link to="/home">
+                    <div className="flex-shrink-0 flex  px-2 ">
+                      <p className="text-gray-800 font-bold font-sans text-2xl leading-10">
+                        remote-now
+                      </p>
+                      <div className="text-gray-800 ">
+                        <svg
+                          id="logo-35"
+                          width="50"
+                          height="39"
+                          viewBox="0 0 50 39"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          {" "}
+                          <path
+                            d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
+                            class="ccompli1"
+                            fill="#007AFF"
+                          ></path>{" "}
+                          <path
+                            d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
+                            class="ccustom"
+                            fill="#312ECB"
+                          ></path>{" "}
+                        </svg>
+                        {/* <img src="/logo.svg" alt="jobs" className="w-6" /> */}
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                ) : (
+                  <Link to="/">
+                    <div className="flex-shrink-0 flex  px-2 ">
+                      <p className="text-gray-800 font-bold font-sans text-2xl leading-10">
+                        remote-now
+                      </p>
+                      <div className="text-gray-800 ">
+                        <svg
+                          id="logo-35"
+                          width="50"
+                          height="39"
+                          viewBox="0 0 50 39"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          {" "}
+                          <path
+                            d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
+                            class="ccompli1"
+                            fill="#007AFF"
+                          ></path>{" "}
+                          <path
+                            d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
+                            class="ccustom"
+                            fill="#312ECB"
+                          ></path>{" "}
+                        </svg>
+                        {/* <img src="/logo.svg" alt="jobs" className="w-6" /> */}
+                      </div>
+                    </div>
+                  </Link>
+                )}
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
@@ -98,6 +134,7 @@ function Nav() {
               {Cookie.get("access_token") ? (
                 <button
                   onClick={onLogout}
+                  type="submit"
                   className="text-gray-100 mx-5  bg-red-500 font-bold mx-l-2 px-7 min-w-md py-2 text-sm rounded-md"
                 >
                   Logout
@@ -114,7 +151,7 @@ function Nav() {
               {Cookie.get("access_token") ? (
                 <Link to="/login">
                   <button className="text-gray-700 border  bg-white font-bold mx-l-2 px-7 min-w-md py-2 text-sm rounded-md">
-                    {userData.recruiter_name}
+                    {userData.user_data.recruiter_name}
                   </button>
                 </Link>
               ) : (
@@ -225,6 +262,6 @@ function Nav() {
       </nav>
     </div>
   );
-}
+};
 
 export default Nav;

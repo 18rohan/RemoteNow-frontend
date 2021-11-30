@@ -1,12 +1,17 @@
 // import { Switch } from 'react-router';
-import { LOGIN, UPDATE_SIGNIN_ERRORS } from "../actions/recruiter.action";
+import {
+  LOGIN,
+  UPDATE_SIGNIN_ERRORS,
+  IS_AUTHENTICATED,
+} from "../actions/recruiter.action";
 
 // importing ACTIONS
 // import SET_CURRENT_USER from './userActions';
 
 const INITIAL_STATE = {
   user_data: {},
-  errors: {},
+  is_authenticated: null,
+  error: {},
 };
 
 const AuthReducer = (state = INITIAL_STATE, action) => {
@@ -17,13 +22,9 @@ const AuthReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state.user_data,
         user_data: currentUser,
+        is_authenticated: true,
       };
-    case UPDATE_SIGNIN_ERRORS:
-      const error_message = action.data;
-      return {
-        ...state.errors,
-        message: error_message,
-      };
+
     default:
       return state;
   }
