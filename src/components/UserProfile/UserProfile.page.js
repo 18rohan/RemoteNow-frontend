@@ -1,5 +1,5 @@
 import React from "react";
-
+import JobseekerNav from "../JobseekerDashboardNavbar.component.js";
 // components
 
 // views
@@ -12,11 +12,18 @@ import UserDetails from "./UserDetails.component";
 import Experience from "./Experience.component";
 import Education from "./Education.component";
 import Accomplishments from "./Accomplishment.component";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 const UserProfile = () => {
+  const userData = useSelector((state) => state.user);
+  const History = useHistory();
+  if (!userData.is_authenticated) {
+    History.push("/jobseeker-login");
+  }
   return (
     <div>
       <div className="fixed w-full z-40">
-        <Nav />
+        <JobseekerNav />
       </div>
 
       <div className="w-full flex flex-row br-gray-100">

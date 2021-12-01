@@ -2,13 +2,16 @@ import "../assets/tailwind.css";
 import { Link } from "react-router-dom";
 
 import React, { useState } from "react";
-
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import JobseekerSignup from "../components/jobseekerSignup.component.js";
 import JobseekerLoginComponent from "../components/JobseekerLogin.component.js";
 
 const JobseekerLogin = ({ authorized }) => {
   const [signin, setSignIn] = useState("signin");
-
+  const history = useHistory();
+  const userData = useSelector((state) => state.user);
+  console.log("USERDATA_JOBSEEKER_LOGIN_PAGE: ", userData.is_authenticated);
   // Toggle Signup and Signin Form
   const ToggleSignin = (event) => {
     event.preventDefault();
@@ -18,6 +21,9 @@ const JobseekerLogin = ({ authorized }) => {
     event.preventDefault();
     setSignIn("signup");
   };
+  if (userData.is_authenticated) {
+    history.push("/user-profile");
+  }
 
   return (
     <div className="grid grid-cols-1 md: grid-cols-1   ">

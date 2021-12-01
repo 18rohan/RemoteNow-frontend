@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import Cookie from "js-cookie";
 
-const Nav = (props) => {
+const JobseekerNav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const userData = useSelector((state) => state.user);
@@ -149,8 +149,7 @@ const Nav = (props) => {
               {Cookie.get("access_token") ? (
                 <Link to="/login">
                   <button className="text-gray-700 border  bg-white font-bold mx-l-2 px-7 min-w-md py-2 text-sm rounded-md">
-                    {userData.user_data.recruiter_name ||
-                      userData.user_data.jobseeker_name}
+                    {userData.user_data.jobseeker_name}
                   </button>
                 </Link>
               ) : (
@@ -263,4 +262,4 @@ const Nav = (props) => {
   );
 };
 
-export default Nav;
+export default JobseekerNav;

@@ -1,5 +1,5 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useFormik, form } from "formik";
 
 import InputComponent from "../components/inputComponent";
@@ -34,11 +34,17 @@ const JobseekerLoginComponent = () => {
     },
   });
   const dispatch = useDispatch();
-
+  const [signinErrors, setSigninErrors] = useState(null);
+  const SigninErrors = useSelector((state) => state.user.error);
   const handleLoginSubmit = (event) => {
     dispatch(AuthActions.login(formik.values.email_id, formik.values.password));
   };
 
+  useEffect(() => {
+    if (SigninErrors !== null) {
+      setSigninErrors(SigninErrors);
+    }
+  }, [SigninErrors]);
   return (
     <div className="w-full flex flex-col md:w-full  h-full justify-start items-center mt-2">
       <form
@@ -99,6 +105,7 @@ const JobseekerLoginComponent = () => {
         </div>
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/2"></div>
+
           <label className="md:w-full flex justify-end text-gray-500 font-bold">
             <input className="mr-2 leading-tight" type="checkbox" />
             <span className="text-sm text-gray-800">
@@ -106,6 +113,7 @@ const JobseekerLoginComponent = () => {
             </span>
           </label>
         </div>
+
         <div className="md:flex md:items-center flex-col justify-center">
           <button
             className="text-white bg-blue-600 w-full border border-blue-600 hover:bg-blue-500 border border-blue-500 hover:text-white focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
@@ -114,6 +122,13 @@ const JobseekerLoginComponent = () => {
           >
             Sign In
           </button>
+          {signinErrors && (
+            <div className="w-full flex justify-start mt-2">
+              <p className="font-medium text-red-500 text-left">
+                *{signinErrors}
+              </p>
+            </div>
+          )}
 
           <div className="  w-full bg-white md:w-full  my-16 flex flex-col justify-start items-center">
             <p className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500 font-bold ">

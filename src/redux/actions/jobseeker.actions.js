@@ -60,13 +60,14 @@ export const login = (email, password) => {
       date.setTime(date.getTime() + 30 * 1000);
 
       Cookie.set("access_token", resData.data.access_token);
-      Cookie.set("refresh_token", resData.data.refresh_token);
-      console.log("RESPONSE DATA", resData);
-      const userData = resData.data.CurrentJobseeker;
+      // Cookie.set("refresh_token", resData.data.refresh_token);
 
+      const userData = resData.data.CurrentJobseeker;
+      console.log("USERDATA: ", userData);
       dispatch({ type: LOGIN, payload: userData });
     } catch (err) {
-      dispatch({ type: UPDATE_SIGNIN_ERRORS, data: err });
+      console.log("ERROR RESPONSE: ", err.response);
+      dispatch({ type: UPDATE_SIGNIN_ERRORS, data: err.response.data.message });
     }
   };
 };

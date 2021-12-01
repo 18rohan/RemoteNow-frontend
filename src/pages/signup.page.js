@@ -35,7 +35,7 @@ const validate = (values) => {
   }
   if (!values.confirmPassword) {
     errors.confirmPassword = "*Required";
-  } else if (values.signup_password !== values.confirmPassword) {
+  } else if (values.password !== values.confirmPassword) {
     errors.confirmPassword = "Password doesn't match";
   }
 
@@ -75,9 +75,9 @@ const Signup = () => {
   const handleSignupSubmit = (event) => {
     dispatch(
       AuthActions.signup(
-        formik.values.recruiter_name,
         formik.values.email_id,
-        formik.values.password
+        formik.values.password,
+        formik.values.recruiter_name
         // formik.values.city,
         // formik.values.state,
         // formik.values.zip_code

@@ -14,6 +14,7 @@ import * as RecruiterActions from "../redux/actions/recruiter.action";
 
 import NewNav from "../components/newnavbar.component";
 import InputComponent from "../components/inputComponent";
+import { useHistory } from "react-router-dom";
 // import Sidebar from '../components/Sidebar.js';
 import Sidebar from "../components/adminSidebar.component";
 import Cookie from "js-cookie";
@@ -22,7 +23,7 @@ const PostJob = ({ authorized }) => {
   const dispatch = useDispatch();
   const [form, setForm] = useState({});
   const userData = useSelector((state) => state.user);
-
+  const history = useHistory();
   const [error, setError] = useState({});
   console.log("POST JOB::: IS_AUTHENTICATED: ", userData.is_authenticated);
   // console.log("POST JOB PAGE AUTHORIZED: ", authorized);
@@ -63,6 +64,10 @@ const PostJob = ({ authorized }) => {
       )
     );
   };
+
+  if (!userData.is_authenticated) {
+    history.push("/login");
+  }
 
   return (
     <div>
