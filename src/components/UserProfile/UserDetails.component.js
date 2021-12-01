@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserDetails = () => {
+const UserDetails = (props) => {
   return (
     <div className="w-full bg-white border border-gray-200 shadow-md rounded-md  px-">
       {/* Basic information Grid */}
@@ -30,7 +30,9 @@ const UserDetails = () => {
             </div>
             <div className="flex flex-col justify-center items-start my-6 mx-2">
               <p className="font-bold text-gray-900 uppercase">location</p>
-              <p className="font-medium text-gray-600">Gurgaon, Haryana</p>
+              <p className="font-medium text-gray-600">
+                {props.city}, {props.province}
+              </p>
             </div>
           </ul>
         </div>
@@ -38,11 +40,19 @@ const UserDetails = () => {
           <ul>
             <div className="flex flex-col justify-center items-start m-6">
               <p className="font-bold text-gray-900 uppercase">phone number</p>
-              <p className="font-medium text-gray-600">+91 9873836104</p>
+              {props.contact_number ? (
+                <p className="font-medium text-gray-600">
+                  {props.contact_number}
+                </p>
+              ) : (
+                <p className="font-medium text-gray-400">
+                  Complete your details
+                </p>
+              )}
             </div>
             <div className="flex flex-col justify-center items-start m-6">
               <p className="font-bold text-gray-900 uppercase">email</p>
-              <p className="font-medium text-gray-600">28 Years</p>
+              <p className="font-medium text-gray-600">{props.email}</p>
             </div>
           </ul>
         </div>

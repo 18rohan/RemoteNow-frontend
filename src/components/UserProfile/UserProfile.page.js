@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 const UserProfile = () => {
   const userData = useSelector((state) => state.user);
+
   const History = useHistory();
   if (!userData.is_authenticated) {
     History.push("/jobseeker-login");
@@ -32,10 +33,19 @@ const UserProfile = () => {
         </div>
         <div className="w-full flex flex-row br-gray-100 my-12">
           <div className="w-1/4 ml-32 my-8 ">
-            <UserInfo />
+            <UserInfo
+              jobseeker_name={userData.user_data.jobseeker_name}
+              country={userData.user_data.current_country}
+              contact_number={userData.user_data.contact_number}
+            />
           </div>
           <div className="w-3/4 my-8 mx-8  ">
-            <UserDetails />
+            <UserDetails
+              city={userData.user_data.current_city}
+              contact_number={userData.user_data.contact_number}
+              province={userData.user_data.current_province}
+              email={userData.user_data.email_id}
+            />
             <Experience />
             <Education />
             <Accomplishments />

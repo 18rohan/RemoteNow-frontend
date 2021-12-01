@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserInfo = () => {
+const UserInfo = (props) => {
   return (
     <div className="w-full bg-white border border-gray-200 shadow-sm rounded-md  py-8 px-2">
       {/* Profile Image */}
@@ -13,7 +13,9 @@ const UserInfo = () => {
           />
         </div>
         {/* User Name */}
-        <p className="font-bold text-gray-800 text-lg">John Doe</p>
+        <p className="font-bold text-gray-800 text-lg">
+          {props.jobseeker_name}
+        </p>
         {/* User Title */}
         <p className="font-medium text-gray-800 text-md">
           Senior Software Engineer
