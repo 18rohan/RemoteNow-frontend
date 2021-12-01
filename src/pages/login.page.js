@@ -5,10 +5,10 @@ import React, { useState, useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useFormik, form } from "formik";
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import * as AuthActions from "../redux/actions/recruiter.action";
 // import axios from "axios";
-import Cookie from "js-cookie";
+
 import InputComponent from "../components/inputComponent";
 
 const validate = (values) => {
@@ -29,8 +29,6 @@ const validate = (values) => {
 };
 
 const Login = ({ authorized }) => {
-  const [user, setUser] = useState({});
-  const [access_token, setAccessToken] = useState(null);
   const [signinErrors, setSigninErrors] = useState(null);
   const userData = useSelector((state) => state.user);
   const SigninErrors = useSelector((state) => state.user.error);

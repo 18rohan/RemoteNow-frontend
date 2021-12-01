@@ -6,7 +6,6 @@ import storage from "redux-persist/lib/storage";
 import thunk from "redux-thunk";
 
 import AuthReducer from "../redux/reducers/user.reducer";
-import ErrorReducer from "../redux/reducers/errors.reducer.js";
 
 // Original default Root Reducer - using combineReducers
 const rootReducer = combineReducers({

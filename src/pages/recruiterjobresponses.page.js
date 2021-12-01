@@ -1,7 +1,5 @@
 import "../assets/tailwind.css";
 
-import { Redirect } from "react-router-dom";
-
 import React from "react";
 
 import Cookie from "js-cookie";
@@ -10,7 +8,7 @@ import "../App.css";
 // Importing ACTIONS
 
 // Importing  Components
-import Navbar from "../components/navbar.component";
+
 import NewNav from "../components/newnavbar.component";
 import AdminJobCard from "../components/adminJobCard.component";
 // import Sidebar from '../components/Sidebar.js';

@@ -9,9 +9,12 @@ const ErrorReducer = (state = INITIAL_STATE, action) => {
     case UPDATE_SIGNIN_ERRORS:
       return {
         ...state,
+        user_data: null,
+        is_authenticated: false,
         error: action.data,
       };
+    default:
+      return state;
   }
 };
-
 export default ErrorReducer;

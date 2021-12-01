@@ -1,9 +1,5 @@
 // import { Switch } from 'react-router';
-import {
-  LOGIN,
-  UPDATE_SIGNIN_ERRORS,
-  IS_AUTHENTICATED,
-} from "../actions/recruiter.action";
+import { LOGIN, UPDATE_SIGNIN_ERRORS } from "../actions/recruiter.action";
 
 // importing ACTIONS
 // import SET_CURRENT_USER from './userActions';

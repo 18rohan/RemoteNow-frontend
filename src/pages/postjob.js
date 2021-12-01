@@ -1,8 +1,6 @@
 import "../assets/tailwind.css";
 
-import { Redirect } from "react-router-dom";
-
-import React, { useState, useLayoutEffect, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import "../App.css";
@@ -17,7 +15,6 @@ import InputComponent from "../components/inputComponent";
 import { useHistory } from "react-router-dom";
 // import Sidebar from '../components/Sidebar.js';
 import Sidebar from "../components/adminSidebar.component";
-import Cookie from "js-cookie";
 
 const PostJob = ({ authorized }) => {
   const dispatch = useDispatch();

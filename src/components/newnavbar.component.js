@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import Cookie from "js-cookie";
@@ -9,7 +9,7 @@ const Nav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const userData = useSelector((state) => state.user);
-  const history = useHistory();
+
   // console.log("USER DATA:::: ", userData.recruiter_name);
 
   const onLogout = () => {

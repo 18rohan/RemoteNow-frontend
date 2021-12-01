@@ -1,5 +1,5 @@
 import React from "react";
-import JobseekerNav from "../JobseekerDashboardNavbar.component.js";
+
 // components
 
 // views

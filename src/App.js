@@ -11,7 +11,7 @@ import JobseekerLogin from "../src/pages/jobseekerlogin.page";
 import JobReponses from "../src/pages/recruiterjobresponses.page";
 import UserProfile from "../src/components/UserProfile/UserProfile.page";
 import Signup from "../src/pages/signup.page";
-import ProtectedRoute from "./components/ProtectedRoute.js";
+
 import Landing from "./components/Landing.page.js";
 import { Switch, Route } from "react-router-dom";
 
