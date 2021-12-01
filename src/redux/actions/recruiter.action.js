@@ -49,8 +49,6 @@ export const login = (email, password) => {
 
       const resData = await response;
 
-      console.log("ACTION RESPONSE: =-->", response);
-
       // Storing the Access token and Refresh token in Local Storage
       var date = new Date();
       date.setTime(date.getTime() + 30 * 1000);
@@ -62,7 +60,7 @@ export const login = (email, password) => {
 
       dispatch({ type: LOGIN, payload: userData });
     } catch (err) {
-      dispatch({ type: UPDATE_SIGNIN_ERRORS, data: err });
+      dispatch({ type: UPDATE_SIGNIN_ERRORS, data: err.response.data.message });
     }
   };
 };

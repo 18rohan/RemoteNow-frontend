@@ -31,7 +31,9 @@ const validate = (values) => {
 const Login = ({ authorized }) => {
   const [user, setUser] = useState({});
   const [access_token, setAccessToken] = useState(null);
+  const [signinErrors, setSigninErrors] = useState(null);
   const userData = useSelector((state) => state.user);
+  const SigninErrors = useSelector((state) => state.user.error);
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -48,18 +50,16 @@ const Login = ({ authorized }) => {
   const history = useHistory();
 
   const handleLoginSubmit = (event) => {
-    dispatch(
-      AuthActions.login(formik.values.email_id, formik.values.password)
-    ).then(() => {
-      if (userData) {
-        history.push("/post-job");
-      }
-    });
+    dispatch(AuthActions.login(formik.values.email_id, formik.values.password));
   };
+  useEffect(() => {
+    if (SigninErrors !== null) {
+      setSigninErrors(SigninErrors);
+    }
+  }, [SigninErrors]);
   if (userData.is_authenticated) {
     history.push("/post-job");
   }
-
   return (
     <div className="grid grid-cols-1  ">
       <div className="w-full bg-white    md:w-full h-screen  cols-span-1 flex flex-col ">
@@ -160,6 +160,13 @@ const Login = ({ authorized }) => {
                   <span className="font-bold">Sign up here</span>
                 </Link>
               </p>
+              {signinErrors && (
+                <div className="w-full flex justify-start mt-2">
+                  <p className="font-medium text-red-500 text-left">
+                    *{signinErrors}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </form>

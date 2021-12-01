@@ -6,11 +6,7 @@ const UserInfo = (props) => {
       {/* Profile Image */}
       <div className="w-full flex flex-col justify-center items-center">
         <div className="flex flex-col w-32 h-32 justify-center items-center   mt-8 mb-4">
-          <img
-            src="./user1.jpeg"
-            alt="user profile "
-            className="rounded-full "
-          />
+          <img src="./default_user2.png" alt="user profile " className=" " />
         </div>
         {/* User Name */}
         <p className="font-bold text-gray-800 text-lg">

@@ -24,7 +24,7 @@ const UserProfile = () => {
   return (
     <div>
       <div className="fixed w-full z-40">
-        <JobseekerNav />
+        <Nav />
       </div>
 
       <div className="w-full flex flex-row br-gray-100">

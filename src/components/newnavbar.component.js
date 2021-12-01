@@ -147,7 +147,13 @@ const Nav = (props) => {
                 </a>
               )}
               {Cookie.get("access_token") ? (
-                <Link to="/login">
+                <Link
+                  to={
+                    userData.user_data.jobseeker_name
+                      ? "/user-profile"
+                      : "/post-job"
+                  }
+                >
                   <button className="text-gray-700 border  bg-white font-bold mx-l-2 px-7 min-w-md py-2 text-sm rounded-md">
                     {userData.user_data.recruiter_name ||
                       userData.user_data.jobseeker_name}

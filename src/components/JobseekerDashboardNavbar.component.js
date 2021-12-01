@@ -147,7 +147,7 @@ const JobseekerNav = (props) => {
                 </a>
               )}
               {Cookie.get("access_token") ? (
-                <Link to="/login">
+                <Link to="/user-profile">
                   <button className="text-gray-700 border  bg-white font-bold mx-l-2 px-7 min-w-md py-2 text-sm rounded-md">
                     {userData.user_data.jobseeker_name}
                   </button>
