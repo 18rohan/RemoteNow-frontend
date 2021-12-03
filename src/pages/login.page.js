@@ -166,6 +166,12 @@ const Login = ({ authorized }) => {
                 </div>
               )}
             </div>
+            <div className="w-full flex flex-col justify-center mt-2 ">
+              <p className="font-bold text-red-500 ">
+                Email id: recruiter@default
+              </p>
+              <p className="font-bold text-red-500 ">password:user123456</p>
+            </div>
           </div>
         </form>
       </div>

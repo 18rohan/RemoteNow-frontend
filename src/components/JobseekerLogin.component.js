@@ -131,6 +131,12 @@ const JobseekerLoginComponent = () => {
           )}
 
           <div className="  w-full bg-white md:w-full  my-16 flex flex-col justify-start items-center">
+            <div className="w-full flex flex-col justify-center mt-2 ">
+              <p className="font-bold text-red-500 ">
+                Email id: jobseeker@default
+              </p>
+              <p className="font-bold text-red-500 ">password:user123456</p>
+            </div>
             <p className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500 font-bold ">
               Lets connect you with the
               <p className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500 font-bold">

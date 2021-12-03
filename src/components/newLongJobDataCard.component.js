@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../assets/tailwind.css";
+import { Markup } from "interweave";
 
-const NewLongCard = (jobs) => {
+const NewLongCard = (props) => {
   const [expand, setExpand] = useState(false);
   const handleExpand = (expand) => {
     setExpand((prevState) => !prevState);
@@ -10,21 +11,24 @@ const NewLongCard = (jobs) => {
     <div>
       {expand ? (
         <div>
-          <button
+          <div
             onClick={handleExpand}
             className="  w-full    flex flex-col justify-start items-start md:w-full flex flex-row mx-2 p-4    bg-white hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-lg m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
           >
             <div className="bg-white px-8">
               <div className="flex flex-row justify-between items-center">
                 <h1 className="text-4xl font-extralight text-left mb-3 text-red-00">
-                  Google is Hiring
+                  {props.company_name} is Hiring
                 </h1>
                 <img src="world-gradient.png" alt="logo" className="w-32" />
               </div>
               <h1 className="text-2xl font-bold text-left mb-6 capitalize">
-                {jobs.jobs.position_title}
+                {props.title}
               </h1>
-              <p className="text-left">
+              <div className="flex flex-col justify-start text-left">
+                <Markup content={props.description} />
+              </div>
+              {/* <p className="text-left">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -41,8 +45,8 @@ const NewLongCard = (jobs) => {
                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <p className="text-left font-bold my-2"> Required Skills</p>
+              </p> */}
+              {/* <p className="text-left font-bold my-2"> Required Skills</p>
               <ul className="text-left list-disc mb-6">
                 <li>
                   8+ years experience as a Full-Stack Software Engineer,
@@ -68,25 +72,32 @@ const NewLongCard = (jobs) => {
                   SQLite, MySQL, SQL Server, MongoDB, Redis, etc.)
                 </li>
                 <li>Cloud computing, especially using AWS services</li>
-              </ul>
-              <div className="flex flex-row justify-around">
-                <div className="w-1/5 flex justify-center items-center tracking-wide text-md text-indigo-700 border-2 border-indigo-700 rounded-md px-2 py-2  font-semibold my-1">
+              </ul> */}
+              <div className="flex flex-row justify-around mt-2">
+                {/* <div className="w-1/5 flex justify-center items-center tracking-wide text-md text-indigo-700 border-2 border-indigo-700 rounded-md px-2 py-2  font-semibold my-1">
                   <p className="text-sm">
                     Vacancies: {jobs.jobs.total_vacancy}
                   </p>
-                </div>
-                <div className="w-1/5 flex justify-center items-center tracking-wide text-md text-indigo-700 border-2 border-indigo-700  rounded-md px-2 py-2  font-semibold my-1">
-                  <p className="text-sm">Industry: {jobs.jobs.industry_name}</p>
-                </div>
-                <div className="w-1/5 flex justify-center items-center tracking-wide text-md text-indigo-700  border-2 border-indigo-700 rounded-md px-2 py-2  font-semibold my-1">
+                </div> */}
+                {props.tags.length > 0 ? (
+                  <div className="w-1/3 flex justify-center items-center tracking-wide text-md text-indigo-700 border-2 border-indigo-700  rounded-md px-2 py-2  font-semibold my-1">
+                    <p className="text-xs">{props.tags[0]}</p>
+                  </div>
+                ) : null}
+                {props.tags.length === 2 ? (
+                  <div className="w-1/3 flex justify-center items-center tracking-wide text-md text-indigo-700 border-2 border-indigo-700  rounded-md px-2 py-2  font-semibold my-1">
+                    <p className="text-xs">{props.tags[1]}</p>
+                  </div>
+                ) : null}
+                {/* <div className="w-1/5 flex justify-center items-center tracking-wide text-md text-indigo-700  border-2 border-indigo-700 rounded-md px-2 py-2  font-semibold my-1">
                   <p className="text-sm">Category: {jobs.jobs.job_category}</p>
-                </div>
-                <div className="w-1/5 flex justify-center items-center tracking-wide text-md border-2 border-indigo-700 rounded-md px-2 py-2 text-indigo-700 font-semibold my-1">
+                </div> */}
+                {/* <div className="w-1/5 flex justify-center items-center tracking-wide text-md border-2 border-indigo-700 rounded-md px-2 py-2 text-indigo-700 font-semibold my-1">
                   <p className="text-sm">
                     Experience: {jobs.jobs.min_experience} -{" "}
                     {jobs.jobs.max_experience}yrs
                   </p>
-                </div>
+                </div> */}
               </div>
               <div className="flex flex-row w-full justify-end my-4">
                 <div className="w-1/2 my-4 -mr-16">
@@ -99,21 +110,19 @@ const NewLongCard = (jobs) => {
                 </div>
               </div>
             </div>
-          </button>
+          </div>
         </div>
       ) : (
-        <button
+        <div
           onClick={handleExpand}
-          className="  w-full   flex flex-row justify-start items-start md:w-full flex flex-row mx-2 p-4    bg-white hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-3xl m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
+          className="  w-full   bg-blue-100 flex flex-row justify-start items-start md:w-full flex flex-row mx-2 p-4    bg-white hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-3xl m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
         >
-          <div>
+          <div className="w-full ">
             <div className="w-full md:w-1/4 h-1/4 flex justify-start items-center  ">
               <img
                 className=" w-full md:w-5/6 h-1/4  object-cover  "
                 src={
-                  jobs.jobs.company_logo
-                    ? jobs.jobs.company_logo
-                    : "world-gradient.png"
+                  props.company_logo ? props.company_logo : "world-gradient.png"
                 }
                 alt="brand logo"
               />
@@ -121,34 +130,48 @@ const NewLongCard = (jobs) => {
             {/* <div className=" rounded-full h-12 w-16 mt-7 font-bold flex items-center justify-center bg-red-500 text-white text-xs">
               NEW
             </div> */}
-            <div className="w-full flex justify-start md:flex flex-col justify-start items-start p-2">
-              <div className="uppercase tracking-wide text-md text-gray-700 font-semibold">
-                {jobs.jobs.position_title}
+            <div className="w-full  flex w-full justify-start md:flex flex-col justify-start items-start p-2">
+              <div className="flex flex-col w-full justify-start items-start uppercase w-full  tracking-wide text-sm text-gray-700 font-semibold">
+                <div className="flex flex-row justify-start items-start w-full text-left">
+                  {/* <span className="font-bold text-blue-600">Title:</span> */}
+                  <p className="text-md font-extrabold">{props.title}</p>
+                </div>
+                <div className="flex flex-row ">
+                  <span className="font-bold text-blue-600">Location:</span>
+                  {props.location}
+                </div>
               </div>
               <div className=" tracking-wide text-md text-green-700 font-semibold my-1">
-                {jobs.jobs.total_vacancy > 0 ? (
+                {/* {jobs.jobs.total_vacancy > 0 ? (
                   <p>Vacancies: {jobs.jobs.total_vacancy}</p>
                 ) : (
                   ""
-                )}
-              </div>
-              <div className="tracking-wide text-md text-gray-700 font-semibold">
-                {/*{jobs.locations_allowed[0]}*/}
+                )} */}
               </div>
 
-              <div className="flex flex-row w-full md:flex flex-row mb-1 mt-2">
-                <div className=" bg-gray-900  rounded-lg text-white font-bold text-xs  mx-1 py-1  w-full md:w-20">
-                  {jobs.jobs.timezone}
-                </div>
-                <div className=" bg-gray-900  rounded-lg text-white font-bold text-xs  mx-1 py-1  w-full md:w-20">
-                  {jobs.jobs.industry_name}
-                </div>
-                <div className=" bg-gray-900  rounded-lg text-white font-bold text-xs  mx-1 py-1  w-full md:w-20">
-                  {jobs.jobs.job_category}
-                </div>
-                <div className=" bg-gray-900  rounded-lg text-white font-bold text-xs  mx-1 py-1  w-full md:w-20">
-                  {jobs.jobs.min_experience} - {jobs.jobs.max_experience}yrs
-                </div>
+              {/* <p className="text-red-500">{props.location}</p> */}
+              <div className="flex flex-row w-2/6  md:flex flex-row mb-1 mt-2">
+                {props.job_type.length > 0 ? (
+                  <div className=" bg-gray-900  rounded-lg text-white font-bold text-xs  mx-1 py-1  w-full md:min-w-full">
+                    {props.job_type[0]}
+                  </div>
+                ) : (
+                  ""
+                )}
+                {props.job_type.length === 2 ? (
+                  <div className=" bg-gray-900  rounded-lg text-white font-bold text-xs  mx-1 py-1  w-full md:min-w-full">
+                    {props.job_type[1]}
+                  </div>
+                ) : null}
+                {props.remote ? (
+                  <div className=" bg-gray-900  rounded-lg text-white font-bold text-xs  mx-1 py-1  w-full md:min-w-full">
+                    Remote
+                  </div>
+                ) : (
+                  <div className=" bg-gray-900  rounded-lg text-white font-bold text-xs  mx-1 py-1  w-full md:min-w-full">
+                    On-site
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -156,11 +179,14 @@ const NewLongCard = (jobs) => {
             <button className="text-white w-1/4 mt-4 bg-green-700 border-2 border-green-700 hover:border-green-500  hover:bg-green-500 hover:text-white font-bold mx-5 px-7 min-w-md py-2 text-sm rounded-md">
               Apply
             </button>
-            <button className="text-white w-1/4  mt-4 bg-blue-700 border-2 border-blue-700 hover:border-blue-500  hover:bg-blue-500 hover:text-white font-bold mx-5 px-7 min-w-md py-2 text-sm rounded-md">
-              Save
+            <button
+              onClick={handleExpand}
+              className="text-white w-1/4  mt-4 bg-blue-700 border-2 border-blue-700 hover:border-blue-500  hover:bg-blue-500 hover:text-white font-bold mx-5 px-7 min-w-md py-2 text-sm rounded-md"
+            >
+              View
             </button>
           </div>
-        </button>
+        </div>
       )}
     </div>
   );

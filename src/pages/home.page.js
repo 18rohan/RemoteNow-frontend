@@ -14,10 +14,10 @@ import SidebarNew from "../components/SidebarNew.component";
 // import Login from '../src/pages/login.page';
 
 const Home = () => {
-  const [jobs, setJobs] = useState([]);
+  const [Alljobs, setJobs] = useState([]);
   async function fetchData() {
-    let response = await axios(`https://remotenow.herokuapp.com/jobs`);
-    let jobs = await response.data;
+    let response = await axios(`https://arbeitnow.com/api/job-board-api`);
+    let jobs = await response.data.data;
     setJobs(jobs);
     console.log(jobs);
   }
@@ -44,9 +44,17 @@ const Home = () => {
               <p className="text-black font-semibold w-full flex flex-row justify-start pl-5 text-md md:text-3xl ">
                 Featured Jobs
               </p>
-              <div className="flex flex-col md:w-3/4 col-span-4 my-2 pr-6 pl-4">
-                {jobs.map((job) => (
-                  <NewLongCard jobs={job} />
+              <div className="flex flex-col md:w-11/12 col-span-4 my-2 pr-6 pl-4">
+                {Alljobs.map((job) => (
+                  <NewLongCard
+                    company_name={job.company_name}
+                    title={job.title}
+                    location={job.location}
+                    job_type={job.job_types}
+                    remote={job.remote}
+                    tags={job.tags}
+                    description={job.description}
+                  />
                 ))}
 
                 {/*<LongCard />
@@ -59,9 +67,9 @@ const Home = () => {
                   New Technical Jobs
                 </p>
                 <div className="  grid grid-cols-1 md:grid-cols-3 p-2">
-                  {jobs.map((job) => (
+                  {/* {jobs.map((job) => (
                     <NewCard jobs={job} />
-                  ))}
+                  ))} */}
                 </div>
               </div>
             </div>
