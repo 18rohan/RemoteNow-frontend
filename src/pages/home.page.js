@@ -63,7 +63,7 @@ const Home = () => {
               </div>
               <div className="w-11/12">
                 <p className="text-black font-semibold  max-w-full text-md md:text-3xl flex justify-center items-center ">
-                  New Technical Jobs
+                  New Tech Jobs
                 </p>
                 <div className="  grid grid-cols-1 md:grid-cols-3 p-2">
                   {/* {jobs.map((job) => (
