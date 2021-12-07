@@ -115,7 +115,7 @@ const NewLongCard = (props) => {
       ) : (
         <div
           onClick={handleExpand}
-          className="  w-full   bg-blue-100 flex flex-row justify-start items-start md:w-full flex flex-row mx-2 p-4    bg-white hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-3xl m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
+          className="  w-full   dark:bg-gray-800 bg-white filter  flex flex-row justify-start items-start md:w-full flex flex-row mx-2 p-4    bg-white hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-3xl m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
         >
           <div className="w-full ">
             <div className="w-full md:w-1/4 h-1/4 flex justify-start items-center  ">
@@ -134,11 +134,17 @@ const NewLongCard = (props) => {
               <div className="flex flex-col w-full justify-start items-start uppercase w-full  tracking-wide text-sm text-gray-700 font-semibold">
                 <div className="flex flex-row justify-start items-start w-full text-left">
                   {/* <span className="font-bold text-blue-600">Title:</span> */}
-                  <p className="text-md font-extrabold">{props.title}</p>
+                  <p className="dark:text-white text-md font-extrabold">
+                    {props.title}
+                  </p>
                 </div>
                 <div className="flex flex-row ">
-                  <span className="font-bold text-blue-600">Location:</span>
-                  {props.location}
+                  <span className="dark:text-blue-400 font-bold text-blue-600">
+                    Location:
+                  </span>
+                  <p className="dark:text-gray-200 text-gray-800">
+                    {props.location}
+                  </p>
                 </div>
               </div>
               <div className=" tracking-wide text-md text-green-700 font-semibold my-1">

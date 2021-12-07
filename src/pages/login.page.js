@@ -60,10 +60,10 @@ const Login = ({ authorized }) => {
   }
   return (
     <div className="grid grid-cols-1  ">
-      <div className="w-full bg-white    md:w-full h-screen  cols-span-1 flex flex-col ">
+      <div className="dark:bg-gray-900 w-full bg-white    md:w-full h-screen  cols-span-1 flex flex-col ">
         <Link to="/">
           <div class="w-full  flex md:w-full justify-start items-start px-2 my-3 ">
-            <p className="text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
+            <p className="dark:text-gray-100 text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
               remote-now
             </p>
             <div className="text-gray-200 text-xl font-bold">
@@ -95,10 +95,10 @@ const Login = ({ authorized }) => {
           <div className="w-full flex flex-col md:w-full h-full justify-center items-center">
             <div className="md:w-1/2 flex flex-col justify-center items-center ">
               <div className="w-full mb-5 md:w-full flex justify-start mb-2">
-                <div className=" w-full md:w-full  flex flex-col justify-center items-center mb-4">
-                  <p className="text-3xl text-gray-800 ">
+                <div className=" w-full mt-4 md:w-full  flex flex-col justify-center items-center mb-4">
+                  <p className="dark:text-gray-100 text-2xl md:text-3xl text-gray-800 ">
                     Lets log you in help you find the{" "}
-                    <p className="text-4xl text-blue-700 font-bold">
+                    <p className="dark:text-blue-500 text-2xl md:text-4xl text-blue-700 font-bold">
                       Right Talents!
                     </p>
                   </p>
@@ -114,7 +114,7 @@ const Login = ({ authorized }) => {
                 type="text"
                 placeholder="john@doe.com"
                 Label="Email Id"
-                label_color="black"
+                label_color="blue"
                 size="half"
                 onChange={formik.handleChange}
               />
@@ -131,7 +131,7 @@ const Login = ({ authorized }) => {
                 type="password"
                 placeholder="Enter password"
                 Label="Password"
-                label_color="black"
+                label_color="blue"
                 size="half"
                 onChange={formik.handleChange}
               />
@@ -143,16 +143,16 @@ const Login = ({ authorized }) => {
                 </div>
               ) : null}
             </div>
-            <div class="md:flex md:items-end w-1/2 flex-col justify-center mt-4">
+            <div class="w-full md:flex md:items-end md:w-1/2 flex-col justify-center mt-4">
               <button
-                class="shadow text-white bg-blue-500 w-full hover:bg-white hover:border hover:border-gray-500 hover:text-gray-800 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
+                class="shadow text-white bg-blue-500 w-3/4 hover:bg-white hover:border hover:border-gray-500 hover:text-gray-800 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
                 type="button"
                 onClick={handleLoginSubmit}
               >
                 Sign In
               </button>
 
-              <p className="text-md font-light text-blue-800 ">
+              <p className="text-md dark:text-gray-100 md:text-md font-light text-blue-800 ">
                 Do not have an account?{" "}
                 <Link to="/signup">
                   <span className="font-bold">Sign up here</span>

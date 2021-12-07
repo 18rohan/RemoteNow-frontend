@@ -34,14 +34,14 @@ const Home = () => {
         <div className="invisible md:visible z-40  ">
           <SidebarNew />
         </div>
-        <div className="px-0 md:px-0 py-5 w-full   ">
-          <div className="w-full md:flex flex-col justify-end items-center  md:w-full bg-white pl-20 ">
+        <div className="px-0 md:px-0  w-full   ">
+          <div className="w-full md:flex flex-col justify-end items-center  md:w-full bg-white pl-20 mb-2 ">
             <Searchbar />
           </div>
 
           <div className="flex flex-col w-full md:grid grid-cols-10 ">
             <div className="w-full md:col-span-9 mx-24 ">
-              <p className="text-black font-semibold w-full flex flex-row justify-start pl-5 text-md md:text-3xl ">
+              <p className="dark:text-gray-100 text-black font-semibold w-full flex flex-row justify-start pl-5 text-lg md:text-3xl ">
                 Featured Jobs
               </p>
               <div className="flex flex-col md:w-11/12 col-span-4 my-2 pr-6 pl-4">

@@ -20,7 +20,7 @@ const Nav = (props) => {
 
   return (
     <div>
-      <nav className="bg-white ">
+      <nav className="dark:bg-gray-900 bg-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -28,7 +28,7 @@ const Nav = (props) => {
                 {Cookie.get("access_token") ? (
                   <Link to="/home">
                     <div className="flex-shrink-0 flex  px-2 ">
-                      <p className="text-gray-800 font-bold font-sans text-2xl leading-10">
+                      <p className="dark:text-white text-gray-800 font-bold font-sans text-2xl leading-10">
                         remote-now
                       </p>
                       <div className="text-gray-800 ">
@@ -59,7 +59,7 @@ const Nav = (props) => {
                 ) : (
                   <Link to="/">
                     <div className="flex-shrink-0 flex  px-2 ">
-                      <p className="text-gray-800 font-bold font-sans text-2xl leading-10">
+                      <p className="dark:text-white text-gray-800 font-bold font-sans text-2xl leading-10">
                         remote-now
                       </p>
                       <div className="text-gray-800 ">
@@ -93,7 +93,7 @@ const Nav = (props) => {
                 <div className="ml-10 flex items-baseline space-x-4">
                   <a
                     href="#dashboard"
-                    className=" hover:bg-gray-700 hover:text-white text-white px-3 py-2 rounded-md text-sm font-medium text-gray-800"
+                    className="dark:text-white hover:bg-gray-700 hover:text-white text-white px-3 py-2 rounded-md text-sm font-medium text-gray-800"
                   >
                     Dashboard
                   </a>
@@ -161,7 +161,7 @@ const Nav = (props) => {
                 </Link>
               ) : (
                 <Link to="/login">
-                  <button className="text-red-700  bg-white font-bold border-2 border-red-700 hover:bg-red-600 border-red-600 hover:text-white border-0 mx-l-2 px-7 min-w-md py-2  text-sm rounded-md">
+                  <button className="dark:bg-red-700 dark:text-white text-red-700  bg-white font-bold border-2 border-red-700 hover:bg-red-600 border-red-600 hover:text-white border-0 mx-l-2 px-7 min-w-md py-2  text-sm rounded-md">
                     Hire a talent
                   </button>
                 </Link>

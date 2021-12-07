@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div>
       <div className="fixed  w-full "></div>
-      <div className="App ">
+      <div className="App dark:bg-gray-900 ">
         <Switch>
           <Route path="/profile" component={Admin} />
           <Route

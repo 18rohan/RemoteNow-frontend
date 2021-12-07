@@ -52,7 +52,7 @@ const JobseekerLoginComponent = () => {
         onSubmit={formik.handleSubmit}
       >
         <div className="flex flex-row justify-right ">
-          <p className="text-2xl mb-2 font-light text-gray-800 ">
+          <p className="dark:text-gray-200 text-2xl mb-2 font-light text-gray-800 ">
             Sign In with the your email id.
           </p>
         </div>
@@ -105,13 +105,6 @@ const JobseekerLoginComponent = () => {
         </div>
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/2"></div>
-
-          <label className="md:w-full flex justify-end text-gray-500 font-bold">
-            <input className="mr-2 leading-tight" type="checkbox" />
-            <span className="text-sm text-gray-800">
-              Send me your newsletter!
-            </span>
-          </label>
         </div>
 
         <div className="md:flex md:items-center flex-col justify-center">
@@ -130,20 +123,21 @@ const JobseekerLoginComponent = () => {
             </div>
           )}
 
-          <div className="  w-full bg-white md:w-full  my-16 flex flex-col justify-start items-center">
-            <div className="w-full flex flex-col justify-center mt-2 ">
-              <p className="font-bold text-red-500 ">
-                Email id: jobseeker@default
-              </p>
-              <p className="font-bold text-red-500 ">password:user123456</p>
-            </div>
-            <p className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500 font-bold ">
+          <div className=" dark:bg-gray-900  w-full bg-white md:w-full  my-16 flex flex-col justify-start items-center">
+            <p className="text-2xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500 font-bold ">
               Lets connect you with the
-              <p className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500 font-bold">
+              <span className="text-2xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500 font-bold">
                 Recruiters, Worlwide!
-              </p>
+              </span>
             </p>
+
             <p className="text-4xl">🌎</p>
+          </div>
+          <div className="w-full flex flex-col justify-center mt-2 ">
+            <p className="font-bold text-red-500 ">
+              Email id: jobseeker@default
+            </p>
+            <p className="font-bold text-red-500 ">password:user123456</p>
           </div>
         </div>
       </form>

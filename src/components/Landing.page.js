@@ -5,15 +5,15 @@ import React from "react";
 
 const Landing = () => {
   return (
-    <div className="flex flex-col p-6">
+    <div className=" dark:bg-gray-900     flex flex-col  py-4 md:py-0">
       {/* Logo */}
-      <div className="flex flex-col w-full justify-center items-center">
+      <div className=" flex flex-col w-full justify-center items-center">
         <Link to="/">
           <div className="w-full  flex md:w-full justify-start items-start px-2 ">
-            <p className="text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
+            <p className="dark:text-white text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
               remote-now
             </p>
-            <div className="text-gray-200 text-xl font-bold">
+            <div className="text-white text-xl font-bold">
               <svg
                 id="logo-35"
                 width="50"
@@ -42,58 +42,71 @@ const Landing = () => {
       {/* Hero title Line */}
       <div className="w-full flex justify-center items-center">
         <div className="w-3/4  mt-8">
-          <h1 className="font-extralight text-7xl text-blue-900 font-sans ">
-            Join the world’s Remote Jobs community
+          <h1 className="text-4xl dark:text-transparent bg-clip-text bg-gradient-to-br from-pink-400 from-red-500 font-bold to-indigo-400 md:font-extralight md:text-7xl text-blue-900 font-sans ">
+            Join the world’s biggest Remote Jobs community
           </h1>
         </div>
       </div>
       {/* Seconday title Line */}
       <div className="w-full flex w-full justify-center items-center">
-        <div className="w-1/2 mt-6">
-          <h1 className="text-2xl font-light">
+        <div className="w-11/12 md:w-1/2 mt-6">
+          <h1 className="text-lg dark:text-white md:text-2xl font-light">
             Experience the startup ecosystem — invest in startups, research the
             fastest-growing companies, and find a job you love!
           </h1>
         </div>
       </div>
       {/* Selection Button */}
-      <div className="flex flex-row mt-12">
+      <div className="flex ml-16 flex-row mt-4 ">
         {/* Button1 */}
-        <div className="flex flex-col w-full justify-center items-center">
+        <div className="  sm:flex-col md:flex flex-row md:ml-24 w-full ">
           {/* Icon & text */}
-          <div className="w-3/5  flex flex-row justify-between mt-12">
-            <div className="flex flex-col w-5/12 justify-center items-center bg-white border border-gray-200 p-4">
-              <img
-                src="./job-search.png"
-                alt="Jobseeker"
-                className="w-24 mb-4"
-              />
-              <h1 className="font-medium">
-                Apply privately to 130,000+ tech & startup jobs with one
-                application. See salary and equity upfront.
-              </h1>
+          <div className=" w-full  md:flex flex-row justify-center self-center items-center mt-5">
+            {" "}
+            <div className="relative group w-full my-6 ">
+              <div className=" absolute inset-0 bg-gradient-to-r from-indigo-700 to-pink-600  -inset-0.5     w-3/4  filter blur-lg   mix-blend multiply backdrop-opacity-40"></div>
+              <div className="relative z-30 dark:bg-gray-900 dark:shadow-3xl relative border-gray-600 flex flex-col w-3/4 h-72 rounded-md justify-center items-center bg-white border border-gray-200 p-4">
+                <img
+                  src="./job-search.png"
+                  alt="Jobseeker"
+                  className="w-1/3 md:w-24 mb-4"
+                />
+                <h1 className="dark:text-gray-100 font-medium">
+                  Apply privately to 130,000+ tech & startup jobs with one
+                  application. See salary and equity upfront.
+                </h1>
 
-              <Link to="/jobseeker-login">
-                <div className="text-white my-6 py-4 bg-blue-700 border-2 border-blue-700 hover:border-blue-500  hover:bg-blue-500 hover:text-white font-bold mx-5 px-7 min-w-md py-2 text-sm rounded-sm">
-                  Find a remote job
-                </div>
-              </Link>
+                <Link to="/jobseeker-login">
+                  <div className="text-xs px-3 my-2 text-white my-2 md:my-3 md:py-4 bg-blue-700 border-2 border-blue-700 hover:border-blue-500  hover:bg-blue-500 hover:text-white font-bold md:mx-5 md:px-7 min-w-md py-2 md:text-sm rounded-sm">
+                    Find a remote job
+                  </div>
+                </Link>
+              </div>
             </div>
-            <div className="flex flex-col w-5/12 justify-center items-center bg-white border border-gray-200 p-4">
-              <img src="./graph.png" alt="Jobseeker" className="w-24 mb-4" />
-              <h1 className="font-medium">
-                Over $1 billion deployed alongside leading venture fund managers
-                with 36% of all top-tier U.S. VC deals funded on AngelList.
-              </h1>
-              <Link to="/login">
-                <div className="text-white my-6 py-4 bg-blue-700 border-2 border-blue-700 hover:border-blue-500  hover:bg-blue-500 hover:text-white font-bold mx-5 px-7 min-w-md py-2 text-sm rounded-sm">
-                  Hire New Talents
-                </div>
-              </Link>
+            <div className="relative group w-full ">
+              <div className=" absolute inset-0 bg-gradient-to-r from-indigo-700 to-pink-600    -inset-0.5     w-3/4  filter blur-lg   mix-blend multiply backdrop-opacity-40"></div>
+              <div className="relative z-10 dark:bg-gray-900 border-gray-600 flex flex-col w-3/4 h-72  justify-center items-center rounded-md bg-white border border-gray-200 p-4">
+                <img
+                  src="./graph.png"
+                  alt="Jobseeker"
+                  className="w-1/3 mt-4 md:w-24 mb-4"
+                />
+                <h1 className="text-sm md:text-md dark:text-gray-100 font-medium">
+                  Over $1 billion deployed alongside leading venture fund
+                  managers with 36% of all top-tier U.S. VC deals funded.
+                </h1>
+                <Link to="/login">
+                  <div className="text-xs py-2 px-3 my-2 text-white md:my-3 md:py-4 bg-blue-700 border-2 border-blue-700 hover:border-blue-500  hover:bg-blue-500 hover:text-white font-bold mx-5 md:px-7 min-w-md py-2 md:text-sm rounded-sm">
+                    Hire New Talents
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
+
         {/* Button2 */}
+
         <div className=""></div>
       </div>
     </div>

@@ -83,9 +83,9 @@ const JobseekerSignup = () => {
   };
 
   return (
-    <div className="w-full flex flex-col md:w-full h-full justify-start items-center overflow-scroll">
+    <div className=" w-full flex flex-col md:w-full h-full justify-start items-center overflow-scroll">
       <form className="w-full max-w-lg mx-10">
-        <p className="text-3xl mb-2 font-extralight text-left text-gray-800 my-8 mb-4 ">
+        <p className="dark:text-gray-200 text-3xl mb-2 font-extralight text-left text-gray-800 my-8 mb-4 ">
           Register yourself.
         </p>
         <div className="flex flex-wrap -mx-3 mb-6">
