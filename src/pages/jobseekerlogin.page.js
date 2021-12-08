@@ -60,7 +60,7 @@ const JobseekerLogin = ({ authorized }) => {
         <div className="w-full md:w-1/3 flex flex-row justify-center ">
           {signin === "signin" ? (
             <button
-              className="bg-blue-600 text-white  border border-gray-200  w-1/2   px-4 py-2 rounded-tl-lg focus:outline-none rounded-bl-lg hover:bg-blue-600 hover:text-white font-bold active:bg-green-700"
+              className="bg-blue-600 text-white    w-1/2   px-4 py-2 rounded-tl-lg focus:outline-none rounded-bl-lg hover:bg-blue-600 hover:text-white font-bold active:bg-green-700"
               onClick={ToggleSignin}
               type="button"
             >
@@ -69,7 +69,7 @@ const JobseekerLogin = ({ authorized }) => {
             </button>
           ) : (
             <button
-              className="bg-white text-gray-800  border border-gray-200  w-1/2   px-4 py-2 rounded-tl-lg focus:outline-none rounded-bl-lg hover:bg-blue-600 hover:text-white font-bold active:bg-green-700"
+              className="bg-white text-gray-800    w-1/2   px-4 py-2 rounded-tl-lg focus:outline-none rounded-bl-lg hover:bg-blue-600 hover:text-white font-bold active:bg-green-700"
               onClick={ToggleSignin}
               type="button"
             >
@@ -79,7 +79,7 @@ const JobseekerLogin = ({ authorized }) => {
 
           {signin === "signup" ? (
             <button
-              className="bg-blue-600 text-white  border border-gray-200  w-1/2   px-4 py-2 rounded-tr-lg focus:outline-none rounded-br-lg hover:bg-blue-600 hover:text-white font-bold active:bg-green-700"
+              className="bg-blue-600 text-white    w-1/2   px-4 py-2 rounded-tr-lg focus:outline-none rounded-br-lg hover:bg-blue-600 hover:text-white font-bold active:bg-green-700"
               onClick={ToggleSignup}
               type="button"
             >
@@ -88,7 +88,7 @@ const JobseekerLogin = ({ authorized }) => {
             </button>
           ) : (
             <button
-              className="bg-white text-gray-800  border border-gray-200  w-1/2   px-4 py-2 rounded-tr-lg focus:outline-none rounded-br-lg hover:bg-blue-600 hover:text-white font-bold active:bg-green-700"
+              className="bg-white text-gray-800    w-1/2   px-4 py-2 rounded-tr-lg focus:outline-none rounded-br-lg hover:bg-blue-600 hover:text-white font-bold active:bg-green-700"
               onClick={ToggleSignup}
               type="button"
             >

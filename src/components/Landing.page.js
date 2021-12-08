@@ -9,7 +9,7 @@ const Landing = () => {
       {/* Logo */}
       <div className=" flex flex-col w-full justify-center items-center">
         <Link to="/">
-          <div className="w-full  flex md:w-full justify-start items-start px-2 ">
+          <div className="w-full  flex md:w-full justify-start items-start px-2 py-2 ">
             <p className="dark:text-white text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
               remote-now
             </p>
@@ -42,7 +42,7 @@ const Landing = () => {
       {/* Hero title Line */}
       <div className="w-full flex justify-center items-center">
         <div className="w-3/4  mt-8">
-          <h1 className="text-4xl dark:text-transparent bg-clip-text bg-gradient-to-br from-pink-400 from-red-500 font-bold to-indigo-400 md:font-extralight md:text-7xl text-blue-900 font-sans ">
+          <h1 className="text-4xl dark:text-transparent bg-clip-text bg-gradient-to-br from-pink-400 from-red-500 font-bold to-indigo-400 md:font-medium md:text-7xl text-blue-900 font-sans ">
             Join the world’s biggest Remote Jobs community
           </h1>
         </div>
@@ -57,14 +57,14 @@ const Landing = () => {
         </div>
       </div>
       {/* Selection Button */}
-      <div className="flex ml-16 flex-row mt-4 ">
+      <div className="flex ml-16 flex-row mt-20 ">
         {/* Button1 */}
         <div className="  sm:flex-col md:flex flex-row md:ml-24 w-full ">
           {/* Icon & text */}
           <div className=" w-full  md:flex flex-row justify-center self-center items-center mt-5">
             {" "}
             <div className="relative group w-full my-6 ">
-              <div className=" absolute inset-0 bg-gradient-to-r from-indigo-700 to-pink-600  -inset-0.5     w-3/4  filter blur-lg   mix-blend multiply backdrop-opacity-40"></div>
+              <div className=" absolute inset-0 bg-gradient-to-r from-indigo-700 to-pink-600  inset-2 rounded-full     w-1/2  filter blur-xl  mix-blend multiply backdrop-opacity-40"></div>
               <div className="relative z-30 dark:bg-gray-900 dark:shadow-3xl relative border-gray-600 flex flex-col w-3/4 h-72 rounded-md justify-center items-center bg-white border border-gray-200 p-4">
                 <img
                   src="./job-search.png"
@@ -84,14 +84,14 @@ const Landing = () => {
               </div>
             </div>
             <div className="relative group w-full ">
-              <div className=" absolute inset-0 bg-gradient-to-r from-indigo-700 to-pink-600    -inset-0.5     w-3/4  filter blur-lg   mix-blend multiply backdrop-opacity-40"></div>
+              <div className=" absolute  bg-gradient-to-r from-pink-700 to-indigo-800    inset-2  right-20  md:ml-40   w-1/2 rounded-full  filter blur-xl   mix-blend multiply backdrop-opacity-40"></div>
               <div className="relative z-10 dark:bg-gray-900 border-gray-600 flex flex-col w-3/4 h-72  justify-center items-center rounded-md bg-white border border-gray-200 p-4">
                 <img
                   src="./graph.png"
                   alt="Jobseeker"
-                  className="w-1/3 mt-4 md:w-24 mb-4"
+                  className="w-1/3 -mt-1 md:w-24 mb-4"
                 />
-                <h1 className="text-sm md:text-md dark:text-gray-100 font-medium">
+                <h1 className="dark:text-gray-100 font-medium">
                   Over $1 billion deployed alongside leading venture fund
                   managers with 36% of all top-tier U.S. VC deals funded.
                 </h1>
