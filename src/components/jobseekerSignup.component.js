@@ -92,7 +92,7 @@ const JobseekerSignup = () => {
           {/* Name */}
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
-              className="uppercase tracking-wide text-gray-700 text-sm md:flex w-full justify-start font-bold mb-2"
+              className="dark:text-blue-500 uppercase tracking-wide text-gray-700 text-sm md:flex w-full justify-start font-bold mb-2"
               htmlFor="grid-first-name"
             >
               Name
@@ -120,7 +120,7 @@ const JobseekerSignup = () => {
           {/* Email */}
           <div className="w-full md:w-1/2 px-3">
             <label
-              className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
+              className="dark:text-blue-500 block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
               htmlFor="grid-last-name"
             >
               Email
@@ -148,7 +148,7 @@ const JobseekerSignup = () => {
         {/* Password */}
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
+            <label className="dark:text-blue-500 block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
               Password
             </label>
 
@@ -175,7 +175,7 @@ const JobseekerSignup = () => {
         {/* Confirm Password */}
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
+            <label className="dark:text-blue-500 block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
               Confirm Password
             </label>
             <input
@@ -202,7 +202,7 @@ const JobseekerSignup = () => {
         <div className="flex flex-wrap -mx-3 mb-2">
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
-              className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
+              className="dark:text-blue-500 block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
               htmlFor="grid-city"
             >
               City
@@ -230,7 +230,7 @@ const JobseekerSignup = () => {
           {/* State */}
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
-              className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
+              className="dark:text-blue-500 block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
               htmlFor="grid-state"
             >
               State
@@ -259,14 +259,14 @@ const JobseekerSignup = () => {
           {/* ZIP Code */}
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
-              className="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
+              className="dark:text-blue-500 block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
               htmlFor="grid-zip"
             >
               Zip
             </label>
 
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="dark:text-blue-500 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
               name="zip_code"
               id="zip_code"
