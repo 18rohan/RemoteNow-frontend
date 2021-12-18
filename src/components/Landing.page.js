@@ -5,7 +5,10 @@ import React from "react";
 import { Toggle } from "./ToggleTheme.js";
 const Landing = () => {
   return (
-    <div className=" dark:bg-gray-900  bg-white   flex flex-col  py-4 md:py-0">
+    <div
+      className=" h-screen
+      dark:bg-gray-900  bg-white   flex flex-col  py-4 md:py-0"
+    >
       {/* Logo */}
       <div className=" flex flex-col w-full justify-center items-center">
         <div className="flex flex-row justify-between items-center w-full px-6">

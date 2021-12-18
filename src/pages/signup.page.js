@@ -88,11 +88,11 @@ const Signup = () => {
   return (
     <div>
       <Link to="/">
-        <div class="w-full  flex md:w-full justify-start items-start px-2 my-3">
-          <p className="text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
+        <div class="w-full   flex md:w-full justify-start items-start px-2 ">
+          <p className="dark:text-gray-100 text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
             remote-now
           </p>
-          <div className="text-gray-200 text-xl font-bold">
+          <div className=" text-gray-200 text-xl font-bold">
             <svg
               id="logo-35"
               width="50"
@@ -116,10 +116,10 @@ const Signup = () => {
           </div>
         </div>
       </Link>
-      <div className="w-full flex  justify-center items-center">
+      <div className="w-full h-screen flex  justify-center items-center">
         <form class="w-full max-w-lg mx-10">
-          <div className=" w-full md:w-full flex flex-col justify-center items-center my-16">
-            <p className="text-2xl md:text-3xl font-light text-gray-800 ">
+          <div className=" w-full md:w-full flex flex-col justify-center items-center mb-16">
+            <p className="text-2xl md:text-3xl font-light dark:text-gray-100 text-gray-800 ">
               Register yourself to connect with the{" "}
               <p className="text-4xl text-blue-700 font-medium">
                 Industry's best talents!
@@ -133,7 +133,7 @@ const Signup = () => {
             {/* Name */}
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
-                class="uppercase tracking-wide text-gray-700 text-sm md:flex w-full justify-start font-bold mb-2"
+                class="uppercase tracking-wide dark:text-gray-100 text-gray-700 text-sm md:flex w-full justify-start font-bold mb-2"
                 htmlFor="grid-first-name"
               >
                 Organisation's Name
@@ -161,7 +161,7 @@ const Signup = () => {
             {/* Email */}
             <div class="w-full md:w-1/2 px-3">
               <label
-                class="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
+                class="block uppercase tracking-wide dark:text-gray-100 text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2"
                 htmlFor="grid-last-name"
               >
                 Email id
@@ -189,7 +189,7 @@ const Signup = () => {
           {/* Password */}
           <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
-              <label class="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
+              <label class="block uppercase tracking-wide dark:text-gray-100 text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
                 Password
               </label>
 
@@ -216,7 +216,7 @@ const Signup = () => {
           {/* Confirm Password */}
           <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
-              <label class="block uppercase tracking-wide text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
+              <label class="block uppercase tracking-wide dark:text-gray-100 text-gray-700 md:flex w-full justify-start text-sm font-bold mb-2">
                 Confirm Password
               </label>
               <input

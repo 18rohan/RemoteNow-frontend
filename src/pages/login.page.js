@@ -143,9 +143,9 @@ const Login = ({ authorized }) => {
                 </div>
               ) : null}
             </div>
-            <div class="w-full md:flex md:items-end md:w-1/2 flex-col justify-center mt-4">
+            <div class="w-full md:flex flex-col md:w-full  flex-col items-center justify-center mt-4">
               <button
-                class="shadow text-white bg-blue-500 w-3/4 hover:bg-white hover:border hover:border-gray-500 hover:text-gray-800 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
+                class="shadow text-white bg-blue-500 w-1/2 hover:bg-white hover:border hover:border-gray-500 hover:text-gray-800 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded-lg"
                 type="button"
                 onClick={handleLoginSubmit}
               >
