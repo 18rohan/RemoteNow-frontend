@@ -49,7 +49,7 @@ const InputComponent = (props) => {
     >
       <div className="flex justify-start items-start md:flex w-full">
         <label
-          className={`${finalLabelColor} flex justify-start items-center w-full font-bold md:w-full text-right mb-2 md:mb-2 pr-4`}
+          className={`${finalLabelColor} dark:text-gray-100 flex justify-start items-center w-full font-bold md:w-full text-right mb-2 md:mb-2 pr-4`}
         >
           {props.Label}
         </label>

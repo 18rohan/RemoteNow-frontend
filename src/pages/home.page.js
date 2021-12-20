@@ -26,11 +26,11 @@ const Home = () => {
 
   return (
     <div>
-      <div className="fixed w-full z-40 ">
+      <div className="fixed w-full z-40 shadow-sm">
         <NewNav />
       </div>
       <div className="flex flex-row">
-        <div className="invisible md:visible z-40  ">
+        <div className="invisible md:visible z-40   ">
           <SidebarNew />
         </div>
         <div className="px-0 md:px-0  w-full   ">
@@ -38,9 +38,9 @@ const Home = () => {
             <Searchbar />
           </div>
 
-          <div className="flex flex-col w-full md:grid grid-cols-10 ">
-            <div className="w-full md:col-span-9 mx-24 ">
-              <p className="dark:text-gray-100 text-black font-semibold w-full flex flex-row justify-start pl-5 text-lg md:text-3xl ">
+          <div className="flex flex-col w-full dark:bg-gray-900 bg-white -mt-4 pl-20">
+            <div className="w-full  mx-2 ">
+              <p className="dark:text-gray-100 text-gray-900 font-semibold w-full flex flex-row justify-start pl-5 text-lg md:text-3xl ">
                 Featured Jobs
               </p>
               <div className="flex flex-col md:w-11/12 col-span-4 my-2 pr-6 pl-4">

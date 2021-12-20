@@ -68,15 +68,15 @@ const PostJob = ({ authorized }) => {
 
   return (
     <div>
-      <div className="fixed w-full">
+      <div className="fixed w-full shadow-md">
         <NewNav recruiter_name={userData.user_data.recruiter_name} />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-6">
+      <div className="grid grid-cols-1 md:grid-cols-6 bg-white ">
         <div className=" invisible md:visible cols-span-1 mt-20  ">
           <Sidebar />
         </div>
 
-        <div className="col-span-5 flex flex-col items-left   w-full pt-2 md:w-full mt-16 flex-col justify-center  p-5 m-250 ">
+        <div className="bg-white dark:bg-gray-800 col-span-5 flex flex-col items-left   w-full pt-2 md:w-full mt-16 flex-col justify-center  p-5 m-250 ">
           <InputComponent
             name="position"
             type="text"

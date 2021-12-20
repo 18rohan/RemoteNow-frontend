@@ -115,7 +115,7 @@ const NewLongCard = (props) => {
       ) : (
         <div
           onClick={handleExpand}
-          className="  w-full   dark:bg-gray-800 bg-white filter  flex flex-row justify-start items-start md:w-full flex flex-row mx-2 p-4    bg-white hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-3xl m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
+          className="  w-full   dark:bg-gray-800 dark:border-gray-900 bg-white filter  flex flex-row justify-start items-start md:w-full flex flex-row mx-2 p-4    bg-white hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-3xl m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
         >
           <div className="w-full ">
             <div className="w-full md:w-1/4 h-1/4 flex justify-start items-center  ">
