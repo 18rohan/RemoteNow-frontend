@@ -2,7 +2,7 @@ import "../assets/tailwind.css";
 
 const SidebarNew = () => {
   return (
-    <div className="dark:bg-gray-900 w-20 h-full bg-grey-100  shadow-sm fixed  ">
+    <div className="dark:bg-gray-900 bg-white w-20 h-full bg-grey-100  shadow-sm fixed  ">
       {/* Icon */}
       <div className="dark:bg-gray-900 w-full  bg-white p-6 hover:bg-gray-100 active:bg-blue-200">
         <img src="/user.png" alt="user" />

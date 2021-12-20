@@ -6,17 +6,19 @@ import storage from "redux-persist/lib/storage";
 import thunk from "redux-thunk";
 
 import AuthReducer from "../redux/reducers/user.reducer";
+import ThemeReducer from "../redux/reducers/theme.reducer.js";
 
 // Original default Root Reducer - using combineReducers
 const rootReducer = combineReducers({
   user: AuthReducer,
+  theme: ThemeReducer,
 });
 
 // Redux-Persist reducer configurations
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["user"],
+  whitelist: ["user", "theme"],
 };
 
 // Finally,we will wrap the persistConfig, rootReducer in persistReducer to create the final rootReducer/combinedReducer

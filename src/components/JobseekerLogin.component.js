@@ -134,10 +134,10 @@ const JobseekerLoginComponent = () => {
             <p className="text-4xl">🌎</p>
           </div>
           <div className="w-full flex flex-col justify-center mt-2 ">
-            <p className="font-thin text-red-400 ">
+            <p className="font-bold text-red-400 ">
               Email id: jobseeker@default.com
             </p>
-            <p className="font-thin text-red-400 ">password:user123456</p>
+            <p className="font-bold text-red-400 ">password:user123456</p>
           </div>
         </div>
       </form>

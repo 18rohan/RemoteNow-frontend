@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 
 // Importing ACTIONS
 import * as AuthActions from "../redux/actions/recruiter.action";
-
+import { Toggle } from "../components/ToggleTheme.js";
 const validate = (values) => {
   const errors = {};
   if (!values.recruiter_name) {
@@ -86,36 +86,41 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <Link to="/">
-        <div class="w-full   flex md:w-full justify-start items-start px-2 ">
-          <p className="dark:text-gray-100 text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
-            remote-now
-          </p>
-          <div className=" text-gray-200 text-xl font-bold">
-            <svg
-              id="logo-35"
-              width="50"
-              height="39"
-              viewBox="0 0 50 39"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {" "}
-              <path
-                d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
-                class="ccompli1"
-                fill="#007AFF"
-              ></path>{" "}
-              <path
-                d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
-                class="ccustom"
-                fill="#312ECB"
-              ></path>{" "}
-            </svg>
+    <div className="dark:bg-gray-900 bg-white">
+      <div className="w-full dark:bg-gray-900 bg-white flex flex-row justify-between items-center px-4 py-2 fixed  mb-12">
+        <Link to="/">
+          <div class="w-full   flex md:w-full justify-start items-start px-2 ">
+            <p className="dark:text-gray-100 text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
+              remote-now
+            </p>
+            <div className=" text-gray-200 text-xl font-bold">
+              <svg
+                id="logo-35"
+                width="50"
+                height="39"
+                viewBox="0 0 50 39"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {" "}
+                <path
+                  d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
+                  class="ccompli1"
+                  fill="#007AFF"
+                ></path>{" "}
+                <path
+                  d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
+                  class="ccustom"
+                  fill="#312ECB"
+                ></path>{" "}
+              </svg>
+            </div>
           </div>
+        </Link>
+        <div>
+          <Toggle />
         </div>
-      </Link>
+      </div>
       <div className="w-full h-screen flex  justify-center items-center">
         <form class="w-full max-w-lg mx-10">
           <div className=" w-full md:w-full flex flex-col justify-center items-center mb-16">
@@ -336,6 +341,12 @@ const Signup = () => {
             >
               Sign Up
             </button>
+            <p className="dark:text-gray-100 text-gray-800">
+              Already have an account?
+              <Link to="/login">
+                <span className="text-red-500">Sign in</span>
+              </Link>
+            </p>
           </div>
         </form>
       </div>

@@ -3,18 +3,20 @@ import { Link } from "react-router-dom";
 
 import React from "react";
 import { Toggle } from "./ToggleTheme.js";
+// import { useDispatch, useSelector } from "react-redux";
+
 const Landing = () => {
   return (
     <div
-      className=" h-screen
-      dark:bg-gray-900  bg-white   flex flex-col  py-4 md:py-0"
+      className=" h-full md:h-screen
+      dark:bg-gray-900  bg-white   flex flex-col  pt-4 pb-8 md:py-0"
     >
       {/* Logo */}
       <div className=" flex flex-col w-full justify-center items-center">
         <div className="flex flex-row justify-between items-center w-full px-6">
           <Link to="/">
             <div className="w-full  flex md:w-full justify-start items-start px-2 py-2 ">
-              <p className="dark:text-white text-gray-800 font-bold font-sans mx-1 text-4xl leading-10">
+              <p className="dark:text-white text-gray-800 font-bold font-sans  text-xl md:text-4xl mx-1 leading-10">
                 remote-now
               </p>
               <div className="text-white text-xl font-bold">

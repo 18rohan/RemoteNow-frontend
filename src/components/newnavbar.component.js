@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import { Toggle } from "../components/ToggleTheme.js";
 import Cookie from "js-cookie";
 
 const Nav = (props) => {
@@ -166,7 +166,11 @@ const Nav = (props) => {
                   </button>
                 </Link>
               )}
+              <div className="ml-8">
+                <Toggle />
+              </div>
             </div>
+
             <div className="-mr-2 flex md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}

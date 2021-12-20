@@ -27,7 +27,7 @@ const UserProfile = () => {
         <Nav />
       </div>
 
-      <div className="w-full flex flex-row br-gray-100">
+      <div className="w-full flex flex-row dark:bg-gray-800 bg-gray-100">
         <div className="invisible md:visible z-40 br-red-100">
           <SidebarNew />
         </div>

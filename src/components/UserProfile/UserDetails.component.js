@@ -2,35 +2,45 @@ import React from "react";
 
 const UserDetails = (props) => {
   return (
-    <div className="w-full bg-white border border-gray-200 shadow-md rounded-md  px-">
+    <div className="w-full dark:bg-gray-900 bg-white border border-gray-200 dark:border-gray-900  shadow-xl rounded-2xl ">
       {/* Basic information Grid */}
-      <h1 className="font-bold text-black text-left mx-4 my-2 text-lg">
+      <h1 className="font-bold dark:text-gray-100 text-black text-left mx-4 my-2 text-lg">
         Basic Information
       </h1>
       <div className="grid grid-cols-3">
         <div className="col-span-1">
           <ul>
             <div className="flex flex-col justify-center items-start m-6">
-              <p className="font-bold text-gray-900">AGE</p>
-              <p className="font-medium text-gray-600">28 Years</p>
+              <p className="font-bold dark:text-gray-100 text-gray-900">AGE</p>
+              <p className="font-medium dark:text-gray-100 text-gray-600">
+                28 Years
+              </p>
             </div>
             <div className="flex flex-col justify-center items-start m-6">
-              <p className="font-bold text-gray-900 uppercase">ctc</p>
-              <p className="font-medium text-gray-600">20 LPA</p>
+              <p className="font-bold dark:text-gray-100 text-gray-900 uppercase">
+                ctc
+              </p>
+              <p className="font-medium dark:text-gray-100 text-gray-600">
+                20 LPA
+              </p>
             </div>
           </ul>
         </div>
         <div className="col-span-1">
           <ul>
             <div className="flex flex-col justify-center items-start my-6 mx-2">
-              <p className="font-bold text-gray-900 uppercase">
+              <p className="font-bold dark:text-gray-100 text-gray-900 uppercase">
                 years of experience
               </p>
-              <p className="font-medium text-gray-800">4 Years</p>
+              <p className="font-medium dark:text-gray-100 text-gray-800">
+                4 Years
+              </p>
             </div>
             <div className="flex flex-col justify-center items-start my-6 mx-2">
-              <p className="font-bold text-gray-900 uppercase">location</p>
-              <p className="font-medium text-gray-600">
+              <p className="font-bold dark:text-gray-100 text-gray-900 uppercase">
+                location
+              </p>
+              <p className="font-medium dark:text-gray-100 text-gray-600">
                 {props.city}, {props.province}
               </p>
             </div>
@@ -39,20 +49,26 @@ const UserDetails = (props) => {
         <div className="col-span-1">
           <ul>
             <div className="flex flex-col justify-center items-start m-6">
-              <p className="font-bold text-gray-900 uppercase">phone number</p>
+              <p className="font-bold dark:text-gray-100 text-gray-900 uppercase">
+                phone number
+              </p>
               {props.contact_number ? (
-                <p className="font-medium text-gray-600">
+                <p className="font-medium dark:text-gray-100 text-gray-600">
                   {props.contact_number}
                 </p>
               ) : (
-                <p className="font-medium text-gray-400">
+                <p className="font-medium dark:text-gray-100 text-gray-400">
                   Complete your details
                 </p>
               )}
             </div>
             <div className="flex flex-col justify-center items-start m-6">
-              <p className="font-bold text-gray-900 uppercase">email</p>
-              <p className="font-medium text-gray-600">{props.email}</p>
+              <p className="font-bold dark:text-gray-100 text-gray-900 uppercase">
+                email
+              </p>
+              <p className="font-medium dark:text-gray-100 text-gray-600">
+                {props.email}
+              </p>
             </div>
           </ul>
         </div>
