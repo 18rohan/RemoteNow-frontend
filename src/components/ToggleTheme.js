@@ -1,4 +1,3 @@
-import { useDarkMode } from "./useDarkMode.js";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { setDarkMode } from "../redux/actions/theme.actions.js";
 import { useDispatch, useSelector } from "react-redux";
