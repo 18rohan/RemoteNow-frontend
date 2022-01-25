@@ -70,41 +70,9 @@ export const logout = () => {
   localStorage.clear();
 };
 
-export const CreateJob = (
-  position,
-  locations_allowed,
-  timezone,
-  industry_name,
-  job_category,
-  industry_job_tags,
-  max_salary,
-  min_salary,
-  currency,
-  salary_interval,
-  max_experience,
-  min_experience,
-  total_vacancy,
-  job_description
-) => {
-  const data_object = {
-    position,
-    locations_allowed,
-    timezone,
-    industry_name,
-    job_category,
-    industry_job_tags,
-    max_salary,
-    min_salary,
-    currency,
-    salary_interval,
-    max_experience,
-    min_experience,
-    total_vacancy,
-    job_description,
-  };
-  console.log("DATA OBJECT: ", data_object);
+export const CreateJob = (post) => {
+  console.log("DATA OBJECT: ", post);
   return async (dispatch) => {
-    console.log("ACTIONS FIELD: ", job_description);
     try {
       const response = await fetch(
         "https://remotenow.herokuapp.com/jobs/create",
@@ -115,18 +83,20 @@ export const CreateJob = (
             auth_token: Cookie.get("access_token"),
           },
           body: JSON.stringify({
-            position_title: position,
-            timezone: timezone,
-            industry_name: industry_name,
-            locations_allowed: locations_allowed,
-            job_category: job_category,
-            min_salary: min_salary,
-            max_salary: max_salary,
-            total_vacancy: total_vacancy,
-            min_experience: min_experience,
-            max_experience: max_experience,
-            salary_interval: salary_interval,
-            job_description: job_description,
+            position_title: post.position,
+            company_name: post.company,
+            tags: post.tags,
+            timezone: post.timezone,
+            industry_name: post.industry,
+            locations_allowed: post.location,
+            job_category: post.category,
+            min_salary: post.minSalary,
+            max_salary: post.maxSalary,
+            total_vacancy: post.vacancy,
+            min_experience: post.minExp,
+            max_experience: post.maxExp,
+            salary_interval: post.interval,
+            job_description: post.desc,
           }),
         }
       );

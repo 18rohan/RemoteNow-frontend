@@ -14,11 +14,20 @@ import SidebarNew from "../components/SidebarNew.component";
 
 const Home = () => {
   const [Alljobs, setJobs] = useState([]);
+  console.log(Alljobs);
   async function fetchData() {
-    let response = await axios(`https://arbeitnow.com/api/job-board-api`);
-    let jobs = await response.data.data;
+    var config = {
+      method: "get",
+
+      url: "https://remotenow.herokuapp.com/jobs/",
+      headers: {},
+    };
+
+    let response = await axios(config);
+    console.log("RESPONSE: ", response);
+    let jobs = await response.data;
     setJobs(jobs);
-    console.log(jobs);
+    console.log(Alljobs);
   }
   useLayoutEffect(() => {
     fetchData();
@@ -38,7 +47,7 @@ const Home = () => {
             <Searchbar />
           </div>
 
-          <div className="flex flex-col w-full dark:bg-gray-900 bg-white -mt-4 pl-20">
+          <div className="flex flex-col w-full bg-white dark:bg-gray-900  -mt-4 pl-20">
             <div className="w-full  mx-2 ">
               <p className="dark:text-gray-100 text-gray-900 font-semibold w-full flex flex-row justify-start pl-5 text-lg md:text-3xl ">
                 Featured Jobs
@@ -47,12 +56,16 @@ const Home = () => {
                 {Alljobs.map((job) => (
                   <NewLongCard
                     company_name={job.company_name}
-                    title={job.title}
-                    location={job.location}
-                    job_type={job.job_types}
-                    remote={job.remote}
-                    tags={job.tags}
-                    description={job.description}
+                    title={job.position_title}
+                    location={job.locations_allowed}
+                    job_type={job.job_category}
+                    maxSalary={job.max_salary}
+                    minSalary={job.min_salary}
+                    minExp={job.min_experience}
+                    maxExp={job.max_experience}
+                    vacancies={job.total_vacancy}
+                    tags={job.locations_allowed}
+                    description={job.job_description}
                   />
                 ))}
 
@@ -62,21 +75,21 @@ const Home = () => {
                 <LongCard />*/}
               </div>
               <div className="w-11/12">
-                <p className="text-black font-semibold  max-w-full text-md md:text-3xl flex justify-center items-center ">
+                {/* <p className="dark:text-gray-100 text-gray-900 font-semibold  max-w-full text-md md:text-3xl flex justify-center items-center ">
                   New Tech Jobs
-                </p>
-                <div className="  grid grid-cols-1 md:grid-cols-3 p-2">
-                  {/* {jobs.map((job) => (
+                </p> */}
+                {/* <div className="  grid grid-cols-1 md:grid-cols-3 p-2">
+                  {jobs.map((job) => (
                     <NewCard jobs={job} />
-                  ))} */}
-                </div>
+                  ))}
+                </div> */}
               </div>
             </div>
             <div className="invisible md:visible col-span-2"></div>
           </div>
-          <div className="w-6xl mb-24 mt-4 border-gray-800"></div>
+          {/* <div className="w-6xl mb-24 mt-4 border-gray-800"></div> */}
 
-          <div className="w-6xl my-24 border-gray-800"></div>
+          {/* <div className="w-6xl my-24 border-gray-800"></div> */}
           {/* <p className="text-blue-900 font-semibold  max-w-full text-md md:text-3xl flex justify-center items-center ">
           Our Recruiters
         </p> */}

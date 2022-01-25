@@ -22,6 +22,7 @@ const PostJob = ({ authorized }) => {
   const userData = useSelector((state) => state.user);
   const history = useHistory();
   const [error, setError] = useState({});
+  console.log("User Data: ", userData);
   console.log("POST JOB::: IS_AUTHENTICATED: ", userData.is_authenticated);
   // console.log("POST JOB PAGE AUTHORIZED: ", authorized);
 
@@ -43,22 +44,23 @@ const PostJob = ({ authorized }) => {
     console.log("POSITION FIELD: ", form.position);
 
     dispatch(
-      RecruiterActions.CreateJob(
-        form.position,
-        form.locations_allowed,
-        form.timezone,
-        form.industry_name,
-        form.job_category,
-        form.industry_job_tags,
-        form.max_salary,
-        form.min_salary,
-        form.currency,
-        form.salary_interval,
-        form.max_experience,
-        form.min_experience,
-        form.total_vacancy,
-        form.job_description
-      )
+      RecruiterActions.CreateJob({
+        position: form.position,
+        company: userData.user_data.recruiter_name,
+        location: form.locations_allowed,
+        timezone: form.timezone,
+        industry: form.industry_name,
+        category: form.job_category,
+        tags: form.industry_job_tags,
+        maxSalary: form.max_salary,
+        minSalary: form.min_salary,
+        currency: form.currency,
+        interval: form.salary_interval,
+        maxExp: form.max_experience,
+        minExp: form.min_experience,
+        vacancy: form.total_vacancy,
+        desc: form.job_description,
+      })
     );
   };
 

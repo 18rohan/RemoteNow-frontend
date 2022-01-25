@@ -13,9 +13,9 @@ const NewLongCard = (props) => {
         <div>
           <div
             onClick={handleExpand}
-            className="  w-full    flex flex-col justify-start items-start md:w-full flex flex-row mx-2 p-4    bg-white hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-lg m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
+            className="  w-full    flex flex-col justify-start items-start md:w-full   mx-2 p-4    bg-white hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-lg m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
           >
-            <div className="bg-white px-8">
+            <div className="bg-white px-8 w-full">
               <div className="flex flex-row justify-between items-center">
                 <h1 className="text-4xl font-extralight text-left mb-3 text-red-00">
                   {props.company_name} is Hiring
@@ -28,51 +28,7 @@ const NewLongCard = (props) => {
               <div className="flex flex-col justify-start text-left">
                 <Markup content={props.description} />
               </div>
-              {/* <p className="text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <p className="text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p> */}
-              {/* <p className="text-left font-bold my-2"> Required Skills</p>
-              <ul className="text-left list-disc mb-6">
-                <li>
-                  8+ years experience as a Full-Stack Software Engineer,
-                  experienced working in an Agile development environment
-                </li>
-                <li>
-                  Experience leading a small dev team through the full
-                  development life cycle, including requirements analysis,
-                  architecture, design, coding, testing, and delivery of
-                  solutions
-                </li>
-                <li>
-                  Front-end development skills using modern JavaScript
-                  frameworks, such as ReactJS/React Native, Angular/AngularJS,
-                  or Vue
-                </li>
-                <li>
-                  Backend development skills using server-side frameworks, such
-                  as Django, Ruby on Rails, Flask, NodeJS/Express
-                </li>
-                <li>
-                  Database skills (e.g., Elasticsearch, Postgres/PostGIS,
-                  SQLite, MySQL, SQL Server, MongoDB, Redis, etc.)
-                </li>
-                <li>Cloud computing, especially using AWS services</li>
-              </ul> */}
+
               <div className="flex flex-row justify-around mt-2">
                 {/* <div className="w-1/5 flex justify-center items-center tracking-wide text-md text-indigo-700 border-2 border-indigo-700 rounded-md px-2 py-2  font-semibold my-1">
                   <p className="text-sm">
@@ -115,7 +71,7 @@ const NewLongCard = (props) => {
       ) : (
         <div
           onClick={handleExpand}
-          className="  w-full   dark:bg-gray-800 dark:border-gray-900 bg-white filter  flex flex-row justify-start items-start md:w-full flex flex-row mx-2 p-4    bg-white hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-3xl m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
+          className="  w-full   dark:bg-gray-800 dark:border-gray-900 bg-white filter  flex flex-row justify-start items-start md:w-full  mx-2 p-4     hover:shadow-2xl hover:  duration-300 hover:scale-100  rounded-3xl m-3  border border-b-black  md:bg-opacity-50  overflow-hidden "
         >
           <div className="w-full ">
             <div className="w-full md:w-1/4 h-1/4 flex justify-start items-center  ">
@@ -130,8 +86,8 @@ const NewLongCard = (props) => {
             {/* <div className=" rounded-full h-12 w-16 mt-7 font-bold flex items-center justify-center bg-red-500 text-white text-xs">
               NEW
             </div> */}
-            <div className="w-full  flex w-full justify-start md:flex flex-col justify-start items-start p-2">
-              <div className="flex flex-col w-full justify-start items-start uppercase w-full  tracking-wide text-sm text-gray-700 font-semibold">
+            <div className="w-full  flex  justify-start md:flex flex-col  items-start p-2">
+              <div className="flex flex-col w-full justify-start items-start uppercase   tracking-wide text-sm text-gray-700 font-semibold">
                 <div className="flex flex-row justify-start items-start w-full text-left">
                   {/* <span className="font-bold text-blue-600">Title:</span> */}
                   <p className="dark:text-white text-md font-extrabold">
@@ -142,9 +98,11 @@ const NewLongCard = (props) => {
                   <span className="dark:text-blue-400 font-bold text-blue-600">
                     Location:
                   </span>
-                  <p className="dark:text-gray-200 text-gray-800">
-                    {props.location}
-                  </p>
+                  {props.location.map((elem) => (
+                    <p className="dark:text-gray-200 text-gray-800 mx-2">
+                      {elem}
+                    </p>
+                  ))}
                 </div>
               </div>
               <div className=" tracking-wide text-md text-green-700 font-semibold my-1">
@@ -156,10 +114,10 @@ const NewLongCard = (props) => {
               </div>
 
               {/* <p className="text-red-500">{props.location}</p> */}
-              <div className="flex flex-row w-2/6  md:flex flex-row mb-1 mt-2">
+              <div className="flex  w-2/6  md:flex flex-row mb-1 mt-2">
                 {props.job_type.length > 0 ? (
                   <div className=" bg-gray-900  rounded-lg text-white font-bold text-xs  mx-1 py-1  w-full md:min-w-full">
-                    {props.job_type[0]}
+                    {props.job_type}
                   </div>
                 ) : (
                   ""
