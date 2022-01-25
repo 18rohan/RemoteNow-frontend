@@ -31,8 +31,9 @@ const Home = () => {
   }
   useLayoutEffect(() => {
     fetchData();
+    /* eslint-disable */
   }, []);
-
+  /* eslint-enable */
   return (
     <div>
       <div className="fixed w-full z-40 shadow-sm">
